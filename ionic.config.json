@@ -1,0 +1,7 @@
+{
+  "name": "traslink",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
