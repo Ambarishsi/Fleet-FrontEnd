@@ -13,12 +13,14 @@
     <ion-item>
       <ion-icon name="person" slot="end"></ion-icon>
       <ion-chip  color="primary">
-        <ion-label class="label-color"></ion-label>
+        <ion-label class="label-color">
+          {{ userInfo.firstName +" "+ userInfo.middleName +" "+ userInfo.lastName }}
+        </ion-label>
       </ion-chip>
     </ion-item>
 
     <ion-card-content>
-      Employee ID:
+      Employee ID: {{ userInfo.employeeId }}
     </ion-card-content>
   </ion-card>
 
@@ -26,7 +28,8 @@
 
     <ion-item>
         <ion-label class="label-color">Location Tracking</ion-label>
-        <ion-toggle slot="end" name="LocationTracking" color="tertiary"></ion-toggle>
+        <ion-toggle *ngIf="userInfo.allowTracking" slot="end" name="LocationTracking" color="tertiary" checked></ion-toggle>
+        <ion-toggle *ngIf="!userInfo.allowTracking" slot="end" name="LocationTracking" color="tertiary"></ion-toggle>
     </ion-item>
 
     <ion-item>
@@ -40,28 +43,28 @@
     <ion-item>
       <div class="alert alert-primary alertstyle" role="alert">
         <strong><small class="small">Pickup Address: </small></strong><br>
-        #105, 5th cross, abc, xyz main road, kr puram, bengalore, karnataka 560056
+          {{userInfo.pickUpAddress}}
       </div>
     </ion-item>
 
     <ion-item>
       <div class="alert alert-primary alertstyle" role="alert">
         <strong><small class="small">Drop Address: </small></strong><br>
-         #105, 5th cross, abc, xyz main road, kr puram, bengalore, karnataka 560056
+          {{userInfo.dropAddress}}
       </div>
     </ion-item>
 
     <ion-item>
       <div class="alert alert-primary alertstyle" role="alert">
         <strong><small class="small">Pickup Nodal: </small></strong><br>
-        abcdefg - near xyz point
+          {{userInfo.pickUpNodalAddress}}
       </div>
     </ion-item>
 
     <ion-item>
       <div class="alert alert-primary alertstyle" role="alert">
         <strong><small class="small">Drop Nodal: </small></strong><br>
-        abcdefg - near xyz point
+          {{userInfo.dropNodalAddress}}
       </div>
     </ion-item>
 

@@ -4,6 +4,7 @@ import { LoginPage } from '../login/login.page';
 import { ProfilePage } from '../profile/profile.page';
 import { IonRouterOutlet } from '@ionic/angular';
 import { EmployeeService } from '../../services/profile/employee.service';
+import { PassdataprofileService } from '../../services/profile/passdataprofile.service';
 
 
 @Component({
@@ -18,21 +19,18 @@ export class Tab1Page implements OnInit {
   employeeData: any;
   userId = '609100323a6c2c2ec62e6577';
 
-  constructor(public modalCtrl: ModalController, private routerOutlet: IonRouterOutlet, private employeeService: EmployeeService) {}
+  constructor(public modalCtrl: ModalController,
+    private routerOutlet: IonRouterOutlet,
+    private employeeService: EmployeeService,
+    private passdataprofileService: PassdataprofileService) {}
 
   ngOnInit() {
    this.userInfo();
   }
 
-  async showModal() {
-    const modal = await this.modalCtrl.create({
-      component: LoginPage,
-      swipeToClose: true, //only works with ios
-      // presentingElement: await this.modalCtrl.getTop()
-    });
-    return await modal.present();
-  }
-
+  sendEmployeeData(): void {
+    this.passdataprofileService.emit<any>(this.employeeData);
+}
 
   //showModalProfile ProfilePage
   async showModalProfile() {
@@ -52,6 +50,7 @@ export class Tab1Page implements OnInit {
         this.employeeData = resp;
         this.employeeName = this.employeeData.data.firstName +' '+ this.employeeData.data.middleName +' '+ this.employeeData.data.lastName;
         this.employeeId = this.employeeData.data.employeeId;
+        this.sendEmployeeData();
       }else{
         console.log('error occured while getting userinfo from employee service');
       }
