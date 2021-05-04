@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageModule } from '../app/login/login.module';
 import { ProfilePageModule } from './profile/profile.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +17,9 @@ import { ProfilePageModule } from './profile/profile.module';
               IonicModule.forRoot(),
               AppRoutingModule,
               LoginPageModule,
-              ProfilePageModule
+              ProfilePageModule,
+              ReactiveFormsModule,
+              HttpClientModule
            ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
