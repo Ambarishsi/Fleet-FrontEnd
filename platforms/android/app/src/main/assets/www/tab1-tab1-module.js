@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Fleet\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">fleet</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n\n  <ion-list>\n    <ion-item>\n      <ion-label color=\"primary\" (click)=\"showModal()\">Login</ion-label>\n    </ion-item>\n\n  </ion-list>\n\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Fleet\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">fleet</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n\n  <ion-list>\n    <ion-item>\n\n      <ion-label color=\"primary\" (click)=\"showModal()\">\n        <ion-icon name=\"log-in\"></ion-icon>\n          Login\n      </ion-label>\n    </ion-item>\n    <ion-item>\n\n      <ion-label color=\"primary\" (click)=\"showModalProfile()\">\n        <ion-icon name=\"person\"> </ion-icon>\n          Profile\n        </ion-label>\n    </ion-item>\n\n  </ion-list>\n\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -29,6 +29,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _login_login_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../login/login.page */ "34Y5");
+/* harmony import */ var _profile_profile_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../profile/profile.page */ "ncJE");
+
+
 
 
 
@@ -36,8 +39,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let Tab1Page = class Tab1Page {
-    constructor(modalCtrl) {
+    constructor(modalCtrl, routerOutlet) {
         this.modalCtrl = modalCtrl;
+        this.routerOutlet = routerOutlet;
     }
     showModal() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -48,9 +52,21 @@ let Tab1Page = class Tab1Page {
             return yield modal.present();
         });
     }
+    //showModalProfile ProfilePage
+    showModalProfile() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modal = yield this.modalCtrl.create({
+                component: _profile_profile_page__WEBPACK_IMPORTED_MODULE_6__["ProfilePage"],
+                swipeToClose: true,
+                presentingElement: this.routerOutlet.nativeEl
+            });
+            return yield modal.present();
+        });
+    }
 };
 Tab1Page.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonRouterOutlet"] }
 ];
 Tab1Page = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
