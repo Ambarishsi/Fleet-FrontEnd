@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 export class PassdataprofileService {
 
-  public subject = new BehaviorSubject<any>({});
+  private subject = new BehaviorSubject<any>({});
 
   emit<T>(data: T) {
     this.subject.next(data);

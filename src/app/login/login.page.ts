@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { LoginService } from './login.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,10 @@ export class LoginPage implements OnInit {
 
 
 
-  constructor(public modalCtrl: ModalController, private router: Router, private loginService: LoginService) { }
+  constructor(public modalCtrl: ModalController,
+    private router: Router,
+     private loginService: LoginService,
+     public toastController: ToastController) { }
 
   ngOnInit() {
     localStorage.clear();
@@ -33,15 +37,39 @@ export class LoginPage implements OnInit {
 
     this.loginService.login(requestData).subscribe(data => {
       localStorage.setItem('UserData', JSON.stringify(data));
-      this.router.navigateByUrl('/tabs/tab1');
+      this.router.navigateByUrl('/tabs/tab2');
     }, err => {
       if (err.status === 401) {
-        alert('Invalid username or password');
+        this.presentToast('Invalid username or password');
       } else {
-        alert('Please try again');
+        this.presentToast('Please try again');
       }
       console.log(err);
     });
+  }
+
+
+  async presentToast(errCode: string) {
+    const toast = await this.toastController.create({
+      message: errCode,
+      position: 'bottom',
+      duration: 2000,
+      animated: true,
+      translucent: true,
+      color: 'tertiary',
+      buttons: [
+         {
+          text: 'X',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    await toast.present();
+
+    const { role } = await toast.onDidDismiss();
   }
 
 

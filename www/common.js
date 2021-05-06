@@ -56,6 +56,45 @@ const openURL = async (url, ev, direction, animation) => {
 
 /***/ }),
 
+/***/ "9feF":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/tech-support/tech-support.page.html ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Tech Support</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismissTechSupport()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <object data=\"https://tawk.to/chat/5fdb33bca8a254155ab43057/1epo446f4\"  width=\"100%\" height=\"100%\"></object>\n</ion-content>\n");
+
+/***/ }),
+
+/***/ "BD8v":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/admin-helpdesk/admin-helpdesk.page.html ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Admin Helpdesk</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-card>\n    <ion-item class=\"call-person\">\n      <ion-icon name=\"business-outline\" class=\"call-person\"></ion-icon>\n      Transport coordinator mobile 1\n    </ion-item>\n    <ion-card-content>\n      <ion-label color=\"primary\" class=\"tele\">\n        <ion-icon name=\"call\"></ion-icon>\n        <a  href=\"tel:9304387089\">  9304387089</a>\n      </ion-label>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-item class=\"call-person\">\n      <ion-icon name=\"business-outline\" class=\"call-person\"></ion-icon>\n      Transport coordinator mobile 2\n    </ion-item>\n    <ion-card-content>\n      <ion-label color=\"primary\" class=\"tele\">\n        <ion-icon name=\"call\"></ion-icon>\n        <a href=\"tel:8123969683\">  8123969683</a>\n      </ion-label>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n");
+
+/***/ }),
+
+/***/ "C7/S":
+/*!*********************************************************!*\
+  !*** ./src/app/admin-helpdesk/admin-helpdesk.page.scss ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".tele {\n  font-weight: 600;\n  font-size: 1.5rem;\n}\n\n.call-person {\n  color: #6a64ff;\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGFkbWluLWhlbHBkZXNrLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsaUJBQUE7QUFDRjs7QUFDQTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtBQUVGIiwiZmlsZSI6ImFkbWluLWhlbHBkZXNrLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZWxle1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgZm9udC1zaXplOiAxLjVyZW07XHJcbn1cclxuLmNhbGwtcGVyc29ue1xyXG4gIGNvbG9yOiM2YTY0ZmY7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG4iXX0= */");
+
+/***/ }),
+
 /***/ "JbSX":
 /*!*********************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/button-active-4927a4c1.js ***!
@@ -137,39 +176,46 @@ const createButtonActiveGesture = (el, isButton) => {
 
 /***/ }),
 
-/***/ "QQAA":
-/*!******************************************************************!*\
-  !*** ./src/app/explore-container/explore-container.component.ts ***!
-  \******************************************************************/
-/*! exports provided: ExploreContainerComponent */
+/***/ "Zaiz":
+/*!*******************************************************!*\
+  !*** ./src/app/admin-helpdesk/admin-helpdesk.page.ts ***!
+  \*******************************************************/
+/*! exports provided: AdminHelpdeskPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExploreContainerComponent", function() { return ExploreContainerComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminHelpdeskPage", function() { return AdminHelpdeskPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _raw_loader_explore_container_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./explore-container.component.html */ "m1kx");
-/* harmony import */ var _explore_container_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./explore-container.component.scss */ "huSS");
+/* harmony import */ var _raw_loader_admin_helpdesk_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./admin-helpdesk.page.html */ "BD8v");
+/* harmony import */ var _admin_helpdesk_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin-helpdesk.page.scss */ "C7/S");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 
 
 
 
-let ExploreContainerComponent = class ExploreContainerComponent {
-    constructor() { }
-    ngOnInit() { }
+
+let AdminHelpdeskPage = class AdminHelpdeskPage {
+    constructor(modalCtrlAdminHelpdesk) {
+        this.modalCtrlAdminHelpdesk = modalCtrlAdminHelpdesk;
+    }
+    ngOnInit() {
+    }
+    dismiss() {
+        this.modalCtrlAdminHelpdesk.dismiss();
+    }
 };
-ExploreContainerComponent.ctorParameters = () => [];
-ExploreContainerComponent.propDecorators = {
-    name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
-};
-ExploreContainerComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+AdminHelpdeskPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+AdminHelpdeskPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-explore-container',
-        template: _raw_loader_explore_container_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        styles: [_explore_container_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+        selector: 'app-admin-helpdesk',
+        template: _raw_loader_admin_helpdesk_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_admin_helpdesk_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })
-], ExploreContainerComponent);
+], AdminHelpdeskPage);
 
 
 
@@ -220,6 +266,73 @@ const detachComponent = (delegate, element) => {
   return Promise.resolve();
 };
 
+
+
+
+/***/ }),
+
+/***/ "d8vs":
+/*!***************************************************!*\
+  !*** ./src/app/tech-support/tech-support.page.ts ***!
+  \***************************************************/
+/*! exports provided: TechSupportPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TechSupportPage", function() { return TechSupportPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_tech_support_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./tech-support.page.html */ "9feF");
+/* harmony import */ var _tech_support_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tech-support.page.scss */ "r/kd");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+
+let TechSupportPage = class TechSupportPage {
+    constructor(modalCtrlTechSupport, renderer, loadingController) {
+        this.modalCtrlTechSupport = modalCtrlTechSupport;
+        this.renderer = renderer;
+        this.loadingController = loadingController;
+    }
+    ngOnInit() {
+    }
+    ngAfterViewInit() {
+        console.log('inside view init');
+        this.presentLoading();
+    }
+    presentLoading() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const loading = yield this.loadingController.create({
+                cssClass: 'my-custom-class',
+                message: 'Connecting...',
+                duration: 2000,
+                backdropDismiss: false
+            });
+            yield loading.present();
+            const { role, data } = yield loading.onDidDismiss();
+            // console.log('Loading dismissed!');
+        });
+    }
+    dismissTechSupport() {
+        this.modalCtrlTechSupport.dismiss();
+    }
+};
+TechSupportPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Renderer2"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["LoadingController"] }
+];
+TechSupportPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-tech-support',
+        template: _raw_loader_tech_support_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_tech_support_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], TechSupportPage);
 
 
 
@@ -349,32 +462,6 @@ const SPINNERS = spinners;
 
 /***/ }),
 
-/***/ "huSS":
-/*!********************************************************************!*\
-  !*** ./src/app/explore-container/explore-container.component.scss ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGV4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFFQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0FBQUY7O0FBR0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUFBRjs7QUFHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUVBLGNBQUE7RUFFQSxTQUFBO0FBRkY7O0FBS0E7RUFDRSxxQkFBQTtBQUZGIiwiZmlsZSI6ImV4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2NvbnRhaW5lciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcblxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xufVxuXG4jY29udGFpbmVyIHN0cm9uZyB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XG59XG5cbiNjb250YWluZXIgcCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDIycHg7XG5cbiAgY29sb3I6ICM4YzhjOGM7XG5cbiAgbWFyZ2luOiAwO1xufVxuXG4jY29udGFpbmVyIGEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59Il19 */");
-
-/***/ }),
-
-/***/ "m1kx":
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/explore-container/explore-container.component.html ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"container\">\n  <strong>{{ name }}</strong>\n  <p>Explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://ionicframework.com/docs/components\">UI Components</a></p>\n</div>");
-
-/***/ }),
-
 /***/ "qULd":
 /*!**************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/haptic-27b3f981.js ***!
@@ -499,39 +586,16 @@ const hapticImpact = (options) => {
 
 /***/ }),
 
-/***/ "qtYk":
-/*!***************************************************************!*\
-  !*** ./src/app/explore-container/explore-container.module.ts ***!
-  \***************************************************************/
-/*! exports provided: ExploreContainerComponentModule */
+/***/ "r/kd":
+/*!*****************************************************!*\
+  !*** ./src/app/tech-support/tech-support.page.scss ***!
+  \*****************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExploreContainerComponentModule", function() { return ExploreContainerComponentModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var _explore_container_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-container.component */ "QQAA");
-
-
-
-
-
-
-let ExploreContainerComponentModule = class ExploreContainerComponentModule {
-};
-ExploreContainerComponentModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"]],
-        declarations: [_explore_container_component__WEBPACK_IMPORTED_MODULE_5__["ExploreContainerComponent"]],
-        exports: [_explore_container_component__WEBPACK_IMPORTED_MODULE_5__["ExploreContainerComponent"]]
-    })
-], ExploreContainerComponentModule);
-
-
+/* harmony default export */ __webpack_exports__["default"] = (".my-custom-class {\n  --background: #222;\n  --spinner-color: #fff;\n  color: #fff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRlY2gtc3VwcG9ydC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUNBLHFCQUFBO0VBRUEsV0FBQTtBQUFGIiwiZmlsZSI6InRlY2gtc3VwcG9ydC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXktY3VzdG9tLWNsYXNzIHtcclxuICAtLWJhY2tncm91bmQ6ICMyMjI7XHJcbiAgLS1zcGlubmVyLWNvbG9yOiAjZmZmO1xyXG5cclxuICBjb2xvcjogI2ZmZjtcclxufVxyXG4iXX0= */");
 
 /***/ })
 

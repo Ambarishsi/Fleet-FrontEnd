@@ -38,11 +38,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let LoginPage = class LoginPage {
-    constructor(modalCtrl, router, loginService) {
+    constructor(modalCtrl, router, loginService, toastController) {
         this.modalCtrl = modalCtrl;
         this.router = router;
         this.loginService = loginService;
+        this.toastController = toastController;
         this.username = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('username', [
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required
         ]);
@@ -50,25 +52,48 @@ let LoginPage = class LoginPage {
     }
     ngOnInit() {
         localStorage.clear();
-        this.username.setValue("");
-        this.password.setValue("");
+        this.username.setValue('');
+        this.password.setValue('');
     }
     login() {
-        let requestData = {
-            "username": this.username.value,
-            "password": this.password.value
+        const requestData = {
+            username: this.username.value,
+            password: this.password.value
         };
         this.loginService.login(requestData).subscribe(data => {
             localStorage.setItem('UserData', JSON.stringify(data));
-            this.router.navigateByUrl('/tabs/tab1');
+            this.router.navigateByUrl('/tabs/tab2');
         }, err => {
-            if (err.status == 401) {
-                alert("Invalid username or password ");
+            if (err.status === 401) {
+                this.presentToast('Invalid username or password');
             }
             else {
-                alert("Please try again");
+                this.presentToast('Please try again');
             }
             console.log(err);
+        });
+    }
+    presentToast(errCode) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: errCode,
+                position: 'bottom',
+                duration: 2000,
+                animated: true,
+                translucent: true,
+                color: 'tertiary',
+                buttons: [
+                    {
+                        text: 'X',
+                        role: 'cancel',
+                        handler: () => {
+                            console.log('Cancel clicked');
+                        }
+                    }
+                ]
+            });
+            yield toast.present();
+            const { role } = yield toast.onDidDismiss();
         });
     }
     dismiss() {
@@ -78,7 +103,8 @@ let LoginPage = class LoginPage {
 LoginPage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
-    { type: _login_service__WEBPACK_IMPORTED_MODULE_7__["LoginService"] }
+    { type: _login_service__WEBPACK_IMPORTED_MODULE_7__["LoginService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ToastController"] }
 ];
 LoginPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -107,7 +133,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    authUrl: "http://ec2-13-127-132-99.ap-south-1.compute.amazonaws.com:7080/v1/api/auth/login"
+    authUrl: 'http://ec2-13-127-132-99.ap-south-1.compute.amazonaws.com:7080/v1/api/auth/login',
+    employeeURL: 'http://ec2-13-127-132-99.ap-south-1.compute.amazonaws.com:7080/employee-ws/v1/employee'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -117,6 +144,43 @@ const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ "S4JI":
+/*!*********************************************************!*\
+  !*** ./src/services/profile/passdataprofile.service.ts ***!
+  \*********************************************************/
+/*! exports provided: PassdataprofileService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PassdataprofileService", function() { return PassdataprofileService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "qCKp");
+
+
+
+let PassdataprofileService = class PassdataprofileService {
+    constructor() {
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]({});
+    }
+    emit(data) {
+        this.subject.next(data);
+    }
+    on() {
+        return this.subject.asObservable();
+    }
+};
+PassdataprofileService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], PassdataprofileService);
+
 
 
 /***/ }),
@@ -256,7 +320,8 @@ let LoginService = class LoginService {
         this.httpClient = httpClient;
         this.httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-                'Content-Type': 'application/json'
+                // eslint-disable-next-line @typescript-eslint/naming-convention
+                'Content-Type': 'application/json; charset=utf-8'
             })
         };
         this.loginApiURL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].authUrl;
@@ -275,6 +340,19 @@ LoginService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], LoginService);
 
 
+
+/***/ }),
+
+/***/ "YIsq":
+/*!*****************************************************!*\
+  !*** ./src/app/edit-address/edit-address.page.scss ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJlZGl0LWFkZHJlc3MucGFnZS5zY3NzIn0= */");
 
 /***/ }),
 
@@ -328,6 +406,51 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "bC/S":
+/*!***************************************************!*\
+  !*** ./src/app/edit-address/edit-address.page.ts ***!
+  \***************************************************/
+/*! exports provided: EditAddressPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditAddressPage", function() { return EditAddressPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_edit_address_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./edit-address.page.html */ "fzYH");
+/* harmony import */ var _edit_address_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit-address.page.scss */ "YIsq");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+let EditAddressPage = class EditAddressPage {
+    constructor(modalCtrlEditAddress) {
+        this.modalCtrlEditAddress = modalCtrlEditAddress;
+    }
+    ngOnInit() {
+    }
+    dismiss() {
+        this.modalCtrlEditAddress.dismiss();
+    }
+};
+EditAddressPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+EditAddressPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-edit-address',
+        template: _raw_loader_edit_address_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_edit_address_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], EditAddressPage);
 
 
 
@@ -409,6 +532,19 @@ LoginPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 ], LoginPageRoutingModule);
 
 
+
+/***/ }),
+
+/***/ "fzYH":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit-address/edit-address.page.html ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Edit Address</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -665,23 +801,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _profile_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile.page.scss */ "zxxS");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _services_profile_passdataprofile_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/profile/passdataprofile.service */ "S4JI");
+/* harmony import */ var _edit_address_edit_address_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../edit-address/edit-address.page */ "bC/S");
+
+
 
 
 
 
 
 let ProfilePage = class ProfilePage {
-    constructor(modalCtrl) {
-        this.modalCtrl = modalCtrl;
+    constructor(modalCtrlProfile, passdataprofileService) {
+        this.modalCtrlProfile = modalCtrlProfile;
+        this.passdataprofileService = passdataprofileService;
     }
     ngOnInit() {
+        this.passdataprofileService.on().subscribe(data => {
+            this.userInfo = data.data;
+        });
+    }
+    //showModalEditAddress
+    showModalEditAddress() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modalAddress = yield this.modalCtrlProfile.create({
+                component: _edit_address_edit_address_page__WEBPACK_IMPORTED_MODULE_6__["EditAddressPage"],
+                swipeToClose: true,
+            });
+            return yield modalAddress.present();
+        });
     }
     dismiss() {
-        this.modalCtrl.dismiss();
+        this.modalCtrlProfile.dismiss();
     }
 };
 ProfilePage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
+    { type: _services_profile_passdataprofile_service__WEBPACK_IMPORTED_MODULE_5__["PassdataprofileService"] }
 ];
 ProfilePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -717,7 +872,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Profile</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen>\n\n  <ion-card>\n    <ion-item>\n      <ion-icon name=\"person\" slot=\"end\"></ion-icon>\n      <ion-chip  color=\"primary\">\n        <ion-label class=\"label-color\">Ambarish Parthasarthy</ion-label>\n      </ion-chip>\n    </ion-item>\n\n    <ion-card-content>\n      Employee ID: 109447\n    </ion-card-content>\n  </ion-card>\n\n  <ion-list>\n\n    <ion-item>\n        <ion-label class=\"label-color\">Location Tracking</ion-label>\n        <ion-toggle slot=\"end\" name=\"LocationTracking\" color=\"tertiary\"></ion-toggle>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class=\"label-color\">Address: </ion-label>\n      <ion-button>\n        Edit Address\n        <ion-icon name=\"create-outline\"></ion-icon>\n      </ion-button>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Pickup Address: </small></strong><br>\n        #105, 5th cross, abc, xyz main road, kr puram, bengalore, karnataka 560056\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Drop Address: </small></strong><br>\n         #105, 5th cross, abc, xyz main road, kr puram, bengalore, karnataka 560056\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Pickup Nodal: </small></strong><br>\n        abcdefg - near xyz point\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Drop Nodal: </small></strong><br>\n        abcdefg - near xyz point\n      </div>\n    </ion-item>\n\n\n\n  </ion-list>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Profile</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen>\n\n  <ion-card>\n    <ion-item>\n      <ion-icon name=\"person\" slot=\"end\"></ion-icon>\n      <ion-chip  color=\"primary\">\n        <ion-label class=\"label-color\">\n          {{ userInfo.firstName +\" \"+ userInfo.middleName +\" \"+ userInfo.lastName }}\n        </ion-label>\n      </ion-chip>\n    </ion-item>\n\n    <ion-card-content>\n      Employee ID: {{ userInfo.employeeId }}\n    </ion-card-content>\n  </ion-card>\n\n  <ion-list>\n\n    <ion-item>\n        <ion-label class=\"label-color\">Location Tracking</ion-label>\n        <ion-toggle *ngIf=\"userInfo.allowTracking\" slot=\"end\" name=\"LocationTracking\" color=\"tertiary\" checked></ion-toggle>\n        <ion-toggle *ngIf=\"!userInfo.allowTracking\" slot=\"end\" name=\"LocationTracking\" color=\"tertiary\"></ion-toggle>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class=\"label-color\">Address: </ion-label>\n      <ion-button (click)=\"showModalEditAddress()\">\n        Edit Address\n        <ion-icon name=\"create-outline\"></ion-icon>\n      </ion-button>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Pickup Address: </small></strong><br>\n          {{userInfo.pickUpAddress}}\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Drop Address: </small></strong><br>\n          {{userInfo.dropAddress}}\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Pickup Nodal: </small></strong><br>\n          {{userInfo.pickUpNodalAddress}}\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Drop Nodal: </small></strong><br>\n          {{userInfo.dropNodalAddress}}\n      </div>\n    </ion-item>\n\n\n\n  </ion-list>\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -786,6 +941,18 @@ const routes = [
     {
         path: 'profile',
         loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./profile/profile.module */ "cRhG")).then(m => m.ProfilePageModule)
+    },
+    {
+        path: 'edit-address',
+        loadChildren: () => __webpack_require__.e(/*! import() | edit-address-edit-address-module */ "edit-address-edit-address-module").then(__webpack_require__.bind(null, /*! ./edit-address/edit-address.module */ "vvDS")).then(m => m.EditAddressPageModule)
+    },
+    {
+        path: 'admin-helpdesk',
+        loadChildren: () => Promise.all(/*! import() | admin-helpdesk-admin-helpdesk-module */[__webpack_require__.e("common"), __webpack_require__.e("admin-helpdesk-admin-helpdesk-module")]).then(__webpack_require__.bind(null, /*! ./admin-helpdesk/admin-helpdesk.module */ "jkdc")).then(m => m.AdminHelpdeskPageModule)
+    },
+    {
+        path: 'tech-support',
+        loadChildren: () => Promise.all(/*! import() | tech-support-tech-support-module */[__webpack_require__.e("common"), __webpack_require__.e("tech-support-tech-support-module")]).then(__webpack_require__.bind(null, /*! ./tech-support/tech-support.module */ "ZaUj")).then(m => m.TechSupportPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
