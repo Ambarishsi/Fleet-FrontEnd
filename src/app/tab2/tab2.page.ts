@@ -4,7 +4,7 @@ import {
   HAMMER_GESTURE_CONFIG
 } from '@angular/platform-browser';
 import { fromEvent } from 'rxjs';
-import {takeWhile} from 'rxjs/operators';
+import { takeWhile } from 'rxjs/operators';
 
 
 
