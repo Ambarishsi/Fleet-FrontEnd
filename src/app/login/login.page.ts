@@ -50,15 +50,15 @@ export class LoginPage implements OnInit {
     });
   }
 
-  async presentToast(messageTxt:string) {
-    const toast = await this.toastController.create({
-      message: messageTxt,
-      duration: 2000,
-      position: 'top',
-      color:'tertiary'
-    });
-    toast.present();
-  }
+  // async presentToast(messageTxt:string) {
+  //   const toast = await this.toastController.create({
+  //     message: messageTxt,
+  //     duration: 2000,
+  //     position: 'top',
+  //     color:'tertiary'
+  //   });
+  //   toast.present();
+  // }
 
   async presentToast(errCode: string) {
     const toast = await this.toastController.create({
