@@ -10,14 +10,27 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
+    path: 'edit-address',
+    loadChildren: () => import('./edit-address/edit-address.module').then( m => m.EditAddressPageModule)
+  },
+  {
+    path: 'admin-helpdesk',
+    loadChildren: () => import('./admin-helpdesk/admin-helpdesk.module').then( m => m.AdminHelpdeskPageModule)
+  },
+  {
+    path: 'tech-support',
+    loadChildren: () => import('./tech-support/tech-support.module').then( m => m.TechSupportPageModule)
+  },
+  {
     path: 'roaster',
     loadChildren: () => import('./roaster/roaster.module').then( m => m.RoasterPageModule)
-  },
+  }
 
 
 ];

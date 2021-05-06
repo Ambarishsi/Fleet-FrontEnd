@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController} from '@ionic/angular';
 import { PassdataprofileService } from '../../services/profile/passdataprofile.service';
+import { EditAddressPage } from '../edit-address/edit-address.page';
+
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +13,9 @@ export class ProfilePage implements OnInit {
 
   userInfo: any;
 
-  constructor(public modalCtrl: ModalController, private passdataprofileService: PassdataprofileService) {
+  constructor(public modalCtrlProfile: ModalController,
+    private passdataprofileService: PassdataprofileService
+  ) {
 
   }
 
@@ -23,8 +27,18 @@ export class ProfilePage implements OnInit {
      );
   }
 
+   //showModalEditAddress
+   async showModalEditAddress() {
+    const modalAddress = await this.modalCtrlProfile.create({
+      component: EditAddressPage,
+      swipeToClose: true,
+    });
+
+    return await modalAddress.present();
+  }
+
   dismiss() {
-    this.modalCtrl.dismiss();
+    this.modalCtrlProfile.dismiss();
   }
 
 

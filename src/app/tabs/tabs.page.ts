@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
 export class TabsPage {
 
   constructor(private router: Router) {
-    if (localStorage.getItem("UserData") == null || localStorage.getItem("UserData") == undefined) {
+    if (localStorage.getItem('UserData') === null || localStorage.getItem('UserData') === undefined) {
       this.router.navigateByUrl('/login');
     }
-    
   }
 
 }

@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Fleet\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">fleet</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n\n  <ion-card>\n    <ion-item>\n      <ion-icon name=\"person\" slot=\"end\"></ion-icon>\n      <ion-chip  color=\"primary\">\n        <ion-label class=\"label-color\">Ambarish Parthasarthy</ion-label>\n      </ion-chip>\n    </ion-item>\n\n    <ion-card-content>\n      Employee ID: 109447\n    </ion-card-content>\n  </ion-card>\n\n  <ion-list>\n\n    <!-- <ion-item>\n      <ion-label color=\"primary\" (click)=\"showModal()\">\n        <ion-icon name=\"log-in\" ></ion-icon>\n          Login\n      </ion-label>\n    </ion-item> -->\n\n    <ion-item>\n      <ion-label color=\"primary\" (click)=\"showModalProfile()\" >\n        <ion-icon name=\"person\" > </ion-icon>\n          Profile\n        </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label color=\"primary\" >\n        <ion-icon name=\"navigate\"></ion-icon>\n          Special Request\n        </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label color=\"primary\" >\n        <ion-icon name=\"call\"></ion-icon>\n          Admin Helpdesk\n        </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label color=\"primary\" >\n        <ion-icon name=\"laptop\"></ion-icon>\n          Tech Support\n        </ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label color=\"primary\" >\n        <ion-icon name=\"log-out\"></ion-icon>\n          Logout\n        </ion-label>\n    </ion-item>\n\n  </ion-list>\n\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Fleet\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">fleet</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n\r\n  <ion-card>\r\n    <ion-item>\r\n      <ion-icon name=\"person\" slot=\"end\"></ion-icon>\r\n      <ion-chip  color=\"primary\">\r\n        <ion-label class=\"label-color\">{{employeeName}}</ion-label>\r\n      </ion-chip>\r\n    </ion-item>\r\n\r\n    <ion-card-content>\r\n      Employee ID: {{employeeId}}\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-list>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalProfile()\" >\r\n        <ion-icon name=\"person\" > </ion-icon>\r\n          Profile\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" >\r\n        <ion-icon name=\"navigate\"></ion-icon>\r\n          Special Request\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalAdminHelpdesk()\">\r\n        <ion-icon name=\"call\"></ion-icon>\r\n          Admin Helpdesk\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalTechSupport()\">\r\n        <ion-icon name=\"laptop\"></ion-icon>\r\n          Tech Support\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" routerLink=\"/login\">\r\n        <ion-icon name=\"log-out\"></ion-icon>\r\n          Logout\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n  </ion-list>\r\n\r\n\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -28,8 +28,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tab1_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab1.page.scss */ "rWyk");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var _login_login_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../login/login.page */ "34Y5");
-/* harmony import */ var _profile_profile_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../profile/profile.page */ "ncJE");
+/* harmony import */ var _profile_profile_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../profile/profile.page */ "ncJE");
+/* harmony import */ var _services_profile_employee_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/profile/employee.service */ "XqgF");
+/* harmony import */ var _services_profile_passdataprofile_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/profile/passdataprofile.service */ "S4JI");
+/* harmony import */ var _admin_helpdesk_admin_helpdesk_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../admin-helpdesk/admin-helpdesk.page */ "Zaiz");
+/* harmony import */ var _tech_support_tech_support_page__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../tech-support/tech-support.page */ "d8vs");
+
+
+
 
 
 
@@ -39,34 +45,100 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let Tab1Page = class Tab1Page {
-    constructor(modalCtrl, routerOutlet) {
+    constructor(modalCtrl, routerOutlet, employeeService, passdataprofileService, toastController) {
         this.modalCtrl = modalCtrl;
         this.routerOutlet = routerOutlet;
+        this.employeeService = employeeService;
+        this.passdataprofileService = passdataprofileService;
+        this.toastController = toastController;
+        this.userId = '609100323a6c2c2ec62e6577';
     }
-    showModal() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const modal = yield this.modalCtrl.create({
-                component: _login_login_page__WEBPACK_IMPORTED_MODULE_5__["LoginPage"],
-                swipeToClose: true,
-            });
-            return yield modal.present();
-        });
+    ngOnInit() {
+        this.userInfo();
+    }
+    sendEmployeeData() {
+        this.passdataprofileService.emit(this.employeeData);
     }
     //showModalProfile ProfilePage
     showModalProfile() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const modal = yield this.modalCtrl.create({
-                component: _profile_profile_page__WEBPACK_IMPORTED_MODULE_6__["ProfilePage"],
+            const modalProfile = yield this.modalCtrl.create({
+                component: _profile_profile_page__WEBPACK_IMPORTED_MODULE_5__["ProfilePage"],
                 swipeToClose: true,
                 presentingElement: this.routerOutlet.nativeEl
             });
-            return yield modal.present();
+            return yield modalProfile.present();
+        });
+    }
+    //showModalAdminHelpdesk
+    showModalAdminHelpdesk() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modalAdminHelpdesk = yield this.modalCtrl.create({
+                component: _admin_helpdesk_admin_helpdesk_page__WEBPACK_IMPORTED_MODULE_8__["AdminHelpdeskPage"],
+                swipeToClose: true,
+                presentingElement: this.routerOutlet.nativeEl
+            });
+            return yield modalAdminHelpdesk.present();
+        });
+    }
+    //showModalTechSupport
+    showModalTechSupport() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modalTechSupport = yield this.modalCtrl.create({
+                component: _tech_support_tech_support_page__WEBPACK_IMPORTED_MODULE_9__["TechSupportPage"],
+                swipeToClose: true,
+                presentingElement: this.routerOutlet.nativeEl
+            });
+            return yield modalTechSupport.present();
+        });
+    }
+    //message toast
+    presentToast(errCode) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message: errCode,
+                position: 'bottom',
+                duration: 2000,
+                animated: true,
+                translucent: true,
+                color: 'tertiary',
+                buttons: [
+                    {
+                        text: 'X',
+                        role: 'cancel',
+                        handler: () => {
+                            console.log('Cancel clicked');
+                        }
+                    }
+                ]
+            });
+            yield toast.present();
+            const { role } = yield toast.onDidDismiss();
+        });
+    }
+    userInfo() {
+        this.employeeService.findById(this.userId).subscribe(resp => {
+            // console.log('Ambarish', resp);
+            if (resp.status === 200) {
+                this.employeeData = resp;
+                this.employeeName = this.employeeData.data.firstName + ' ' + this.employeeData.data.middleName + ' ' + this.employeeData.data.lastName;
+                this.employeeId = this.employeeData.data.employeeId;
+                this.sendEmployeeData();
+            }
+            else {
+                this.presentToast('error occured while getting userinfo from employee service');
+            }
+        }, err => {
+            console.log(err);
         });
     }
 };
 Tab1Page.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonRouterOutlet"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonRouterOutlet"] },
+    { type: _services_profile_employee_service__WEBPACK_IMPORTED_MODULE_6__["EmployeeService"] },
+    { type: _services_profile_passdataprofile_service__WEBPACK_IMPORTED_MODULE_7__["PassdataprofileService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] }
 ];
 Tab1Page = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -117,6 +189,52 @@ Tab1PageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
 
 /***/ }),
 
+/***/ "XqgF":
+/*!**************************************************!*\
+  !*** ./src/services/profile/employee.service.ts ***!
+  \**************************************************/
+/*! exports provided: EmployeeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmployeeService", function() { return EmployeeService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "AytR");
+
+
+
+
+let EmployeeService = class EmployeeService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                // eslint-disable-next-line @typescript-eslint/naming-convention
+                'Content-Type': 'application/json; charset=utf-8'
+            })
+        };
+        this.employeeBaseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].employeeURL;
+    }
+    findById(data) {
+        return this.httpClient.get(this.employeeBaseUrl + '/find/' + data, this.httpOptions);
+    }
+};
+EmployeeService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+EmployeeService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], EmployeeService);
+
+
+
+/***/ }),
+
 /***/ "rWyk":
 /*!*************************************!*\
   !*** ./src/app/tab1/tab1.page.scss ***!
@@ -146,9 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _tab1_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab1.page */ "Mzl2");
-/* harmony import */ var _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../explore-container/explore-container.module */ "qtYk");
-/* harmony import */ var _tab1_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tab1-routing.module */ "XOzS");
-
+/* harmony import */ var _tab1_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab1-routing.module */ "XOzS");
 
 
 
@@ -164,8 +280,7 @@ Tab1PageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["IonicModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-            _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_6__["ExploreContainerComponentModule"],
-            _tab1_routing_module__WEBPACK_IMPORTED_MODULE_7__["Tab1PageRoutingModule"]
+            _tab1_routing_module__WEBPACK_IMPORTED_MODULE_6__["Tab1PageRoutingModule"]
         ],
         declarations: [_tab1_page__WEBPACK_IMPORTED_MODULE_5__["Tab1Page"]]
     })
