@@ -20,27 +20,27 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     localStorage.clear();
-    this.username.setValue("");
-    this.password.setValue("");
+    this.username.setValue('');
+    this.password.setValue('');
   }
 
   login() {
 
-    let requestData = {
-      "username": this.username.value,
-      "password": this.password.value
-    }
+    const requestData = {
+      username: this.username.value,
+      password: this.password.value
+    };
 
     this.loginService.login(requestData).subscribe(data => {
       localStorage.setItem('UserData', JSON.stringify(data));
       this.router.navigateByUrl('/tabs/tab1');
     }, err => {
-      if (err.status == 401) {
-        alert("Invalid username or password ");
+      if (err.status === 401) {
+        alert('Invalid username or password');
       } else {
-        alert("Please try again");
+        alert('Please try again');
       }
-      console.log(err)
+      console.log(err);
     });
   }
 

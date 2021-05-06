@@ -12,9 +12,12 @@ export class LoginService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      'Content-Type': 'application/json; charset=utf-8'
     })
   };
+
+
 
   loginApiURL: string = environment.authUrl;
 
@@ -24,5 +27,5 @@ export class LoginService {
     return this.httpClient.post<any>(this.loginApiURL, data, this.httpOptions);
   }
 
-  
+
 }

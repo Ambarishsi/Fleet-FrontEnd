@@ -26,24 +26,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_login_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./login.page.html */ "V6Ie");
 /* harmony import */ var _login_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login.page.scss */ "r67e");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _login_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./login.service */ "XNvx");
+
+
+
 
 
 
 
 
 let LoginPage = class LoginPage {
-    constructor(modalCtrl) {
+    constructor(modalCtrl, router, loginService) {
         this.modalCtrl = modalCtrl;
+        this.router = router;
+        this.loginService = loginService;
+        this.username = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('username', [
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required
+        ]);
+        this.password = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]('password');
     }
     ngOnInit() {
+        localStorage.clear();
+        this.username.setValue("");
+        this.password.setValue("");
+    }
+    login() {
+        let requestData = {
+            "username": this.username.value,
+            "password": this.password.value
+        };
+        this.loginService.login(requestData).subscribe(data => {
+            localStorage.setItem('UserData', JSON.stringify(data));
+            this.router.navigateByUrl('/tabs/tab1');
+        }, err => {
+            if (err.status == 401) {
+                alert("Invalid username or password ");
+            }
+            else {
+                alert("Please try again");
+            }
+            console.log(err);
+        });
     }
     dismiss() {
         this.modalCtrl.dismiss();
     }
 };
 LoginPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: _login_service__WEBPACK_IMPORTED_MODULE_7__["LoginService"] }
 ];
 LoginPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -71,7 +106,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
+    authUrl: "http://ec2-13-127-132-99.ap-south-1.compute.amazonaws.com:7080/v1/api/auth/login"
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -128,7 +164,7 @@ AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-title>Login</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)='dismiss()'>Close</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen>\r\n<div class=\"content\">\r\n  <form>\r\n    <div class=\"field\">\r\n      <span><ion-icon name=\"person-circle-outline\"></ion-icon></span>\r\n      <input type=\"text\" required>\r\n      <label>Id</label>\r\n    </div>\r\n    <div class=\"field\">\r\n      <span><ion-icon name=\"key-outline\"></ion-icon></span>\r\n      <input type=\"password\">\r\n      <label>Password</label>\r\n    </div>\r\n    <div class=\"forgot-pass\"><a href=\"#\">Forgot Password?</a></div>\r\n    <button>Sign in</button>\r\n  </form>\r\n</div>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content fullscreen>\r\n  <div class=\"content\">\r\n    <img class=\"logo\" src=\"https://cdn0.iconfinder.com/data/icons/citycons/150/Citycons_bus-512.png\"/>\r\n    <form >\r\n      \r\n      <div class=\"field\">\r\n        <span><ion-icon name=\"person-circle-outline\"></ion-icon></span>\r\n        <input type=\"text\" [formControl]=\"username\"  autocomplete=\"off\" placeholder=\"username\">\r\n        \r\n      </div>\r\n      <div class=\"field\">\r\n        <span><ion-icon name=\"key-outline\"></ion-icon></span>\r\n        <input type=\"password\" [formControl]=\"password\" autocomplete=\"off\" placeholder=\"password\">\r\n       \r\n      </div>\r\n      <div class=\"forgot-pass\"><a href=\"#\">Forgot Password?</a></div>\r\n      <button (click)=\"login()\">Sign in</button>\r\n    </form>\r\n  </div>\r\n</ion-content>");
 
 /***/ }),
 
@@ -186,11 +222,57 @@ LoginPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
             _login_routing_module__WEBPACK_IMPORTED_MODULE_5__["LoginPageRoutingModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forChild(routes)
+            _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forChild(routes),
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
         ],
         declarations: [_login_page__WEBPACK_IMPORTED_MODULE_6__["LoginPage"]]
     })
 ], LoginPageModule);
+
+
+
+/***/ }),
+
+/***/ "XNvx":
+/*!****************************************!*\
+  !*** ./src/app/login/login.service.ts ***!
+  \****************************************/
+/*! exports provided: LoginService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginService", function() { return LoginService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "AytR");
+
+
+
+
+let LoginService = class LoginService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        this.loginApiURL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].authUrl;
+    }
+    login(data) {
+        return this.httpClient.post(this.loginApiURL, data, this.httpOptions);
+    }
+};
+LoginService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+LoginService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], LoginService);
 
 
 
@@ -215,6 +297,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "Sy1n");
 /* harmony import */ var _app_login_login_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../app/login/login.module */ "X3zk");
 /* harmony import */ var _profile_profile_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profile/profile.module */ "cRhG");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
+
 
 
 
@@ -234,7 +320,9 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
             _app_login_login_module__WEBPACK_IMPORTED_MODULE_7__["LoginPageModule"],
-            _profile_profile_module__WEBPACK_IMPORTED_MODULE_8__["ProfilePageModule"]
+            _profile_profile_module__WEBPACK_IMPORTED_MODULE_8__["ProfilePageModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]
         ],
         providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
@@ -629,7 +717,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Profile</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Profile</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen>\n\n  <ion-card>\n    <ion-item>\n      <ion-icon name=\"person\" slot=\"end\"></ion-icon>\n      <ion-chip  color=\"primary\">\n        <ion-label class=\"label-color\">Ambarish Parthasarthy</ion-label>\n      </ion-chip>\n    </ion-item>\n\n    <ion-card-content>\n      Employee ID: 109447\n    </ion-card-content>\n  </ion-card>\n\n  <ion-list>\n\n    <ion-item>\n        <ion-label class=\"label-color\">Location Tracking</ion-label>\n        <ion-toggle slot=\"end\" name=\"LocationTracking\" color=\"tertiary\"></ion-toggle>\n    </ion-item>\n\n    <ion-item>\n      <ion-label class=\"label-color\">Address: </ion-label>\n      <ion-button>\n        Edit Address\n        <ion-icon name=\"create-outline\"></ion-icon>\n      </ion-button>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Pickup Address: </small></strong><br>\n        #105, 5th cross, abc, xyz main road, kr puram, bengalore, karnataka 560056\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Drop Address: </small></strong><br>\n         #105, 5th cross, abc, xyz main road, kr puram, bengalore, karnataka 560056\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Pickup Nodal: </small></strong><br>\n        abcdefg - near xyz point\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n        <strong><small class=\"small\">Drop Nodal: </small></strong><br>\n        abcdefg - near xyz point\n      </div>\n    </ion-item>\n\n\n\n  </ion-list>\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -786,7 +874,7 @@ webpackEmptyAsyncContext.id = "zn8P";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwcm9maWxlLnBhZ2Uuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-toggle {\n  --background: #000;\n  --background-checked: #7a49a5;\n  --handle-background: #7a49a5;\n  --handle-background-checked: #000;\n}\n\n.label-color {\n  color: #6a64ff;\n}\n\n.alertstyle {\n  width: 100%;\n  margin-top: 1rem;\n  padding-top: 2px;\n  padding-bottom: 2px;\n  font-size: 15px;\n}\n\n.small {\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHByb2ZpbGUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFDQSw2QkFBQTtFQUVBLDRCQUFBO0VBQ0EsaUNBQUE7QUFBRjs7QUFFQTtFQUNFLGNBQUE7QUFDRjs7QUFFQTtFQUNFLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0FBQ0Y7O0FBR0E7RUFDRSxnQkFBQTtBQUFGIiwiZmlsZSI6InByb2ZpbGUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRvZ2dsZSB7XHJcbiAgLS1iYWNrZ3JvdW5kOiAjMDAwO1xyXG4gIC0tYmFja2dyb3VuZC1jaGVja2VkOiAjN2E0OWE1O1xyXG5cclxuICAtLWhhbmRsZS1iYWNrZ3JvdW5kOiAjN2E0OWE1O1xyXG4gIC0taGFuZGxlLWJhY2tncm91bmQtY2hlY2tlZDogIzAwMDtcclxufVxyXG4ubGFiZWwtY29sb3J7XHJcbiAgY29sb3I6IzZhNjRmZjtcclxufVxyXG5cclxuLmFsZXJ0c3R5bGV7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgbWFyZ2luLXRvcDogMXJlbTtcclxuICBwYWRkaW5nLXRvcDogMnB4O1xyXG4gIHBhZGRpbmctYm90dG9tOiAycHg7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG5cclxufVxyXG5cclxuLnNtYWxse1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuXHJcbiJdfQ== */");
 
 /***/ })
 

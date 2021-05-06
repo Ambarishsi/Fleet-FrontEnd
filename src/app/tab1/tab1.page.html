@@ -18,23 +18,16 @@
     <ion-item>
       <ion-icon name="person" slot="end"></ion-icon>
       <ion-chip  color="primary">
-        <ion-label class="label-color">Ambarish Parthasarthy</ion-label>
+        <ion-label class="label-color">{{employeeName}}</ion-label>
       </ion-chip>
     </ion-item>
 
     <ion-card-content>
-      Employee ID: 109447
+      Employee ID: {{employeeId}}
     </ion-card-content>
   </ion-card>
 
   <ion-list>
-    <ion-item>
-
-      <ion-label color="primary" (click)="showModal()">
-        <ion-icon name="log-in" ></ion-icon>
-          Login
-      </ion-label>
-    </ion-item>
 
     <ion-item>
       <ion-label color="primary" (click)="showModalProfile()" >
