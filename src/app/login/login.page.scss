@@ -22,6 +22,7 @@
 
 
 
+
 /**Desktop Query*/
 @media only screen and (min-width: 768px) {
   .content{
@@ -162,17 +163,16 @@ span{
 }
 
 button{
-  background: #34818d;
+  background:#6a64ff;
   color: #fff;
   margin: 16px 0 0;
   padding: 10px 40px;
   width: 100%;
 }
 
-button:focus{
-  color: #3498db;
-  box-shadow: inset 2px 2px 5px #babecc,
-              inset -5px -5px 10px #ffffff73;
+button:hover{
+
+  background:#6A64D7;
 }
 
 .signup{
