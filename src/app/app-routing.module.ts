@@ -27,8 +27,10 @@ const routes: Routes = [
     path: 'tech-support',
     loadChildren: () => import('./tech-support/tech-support.module').then( m => m.TechSupportPageModule)
   },
-
-
+  {
+    path: 'roaster',
+    loadChildren: () => import('./roaster/roaster.module').then( m => m.RoasterPageModule)
+  }
 
 
 ];
