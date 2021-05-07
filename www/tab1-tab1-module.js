@@ -244,7 +244,7 @@ EmployeeService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  font-size: 20px;\n}\n\n.label-color {\n  color: #6a64ff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRhYjEucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtBQUNGOztBQUNBO0VBQ0UsY0FBQTtBQUVGIiwiZmlsZSI6InRhYjEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWljb24ge1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxufVxyXG4ubGFiZWwtY29sb3J7XHJcbiAgY29sb3I6IzZhNjRmZjtcclxufVxyXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  font-size: 20px;\n}\n\n.label-color {\n  color: #6a64ff;\n}\n\nion-item {\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRhYjEucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtBQUNGOztBQUNBO0VBQ0UsY0FBQTtBQUVGOztBQUNBO0VBQ0UsZ0JBQUE7QUFFRiIsImZpbGUiOiJ0YWIxLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pY29uIHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuLmxhYmVsLWNvbG9ye1xyXG4gIGNvbG9yOiM2YTY0ZmY7XHJcbn1cclxuXHJcbmlvbi1pdGVte1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuIl19 */");
 
 /***/ }),
 

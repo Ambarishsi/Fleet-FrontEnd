@@ -1,3 +1,39 @@
-<p style="background-color: red;">
-  active-trips works!
-</p>
+<ion-grid>
+  <ion-row>
+
+    <ion-col class="ion-center">
+      <div class="bookmarkRibbon">
+        <span class="bookmarkText">
+        23 May
+        </span>
+      </div>
+      <ion-card color="primary" (click)="showModalTripInfo()">
+        <ion-card-header>
+          <ion-card-subtitle>
+            <ion-icon name="time"></ion-icon>
+              Pickup trip @ 14:54
+          </ion-card-subtitle>
+          <ion-card-title>
+            <ion-icon name="car-sport"></ion-icon>
+              Vehicle No: MH1 BD7
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p>
+          <ion-icon name="person"></ion-icon>
+           Driver: RAVI
+          </p>
+          <p>
+           <ion-icon name="location"></ion-icon>
+           From: 15 Number
+          </p>
+          <p>
+           <ion-icon name="location"></ion-icon>
+           To: T6
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -20,7 +20,9 @@ export class LoginPage implements OnInit {
 
 
 
-  constructor(public modalCtrl: ModalController, private router: Router, private loginService: LoginService, public alertController: AlertController,public toastController: ToastController) { }
+  constructor(public modalCtrl: ModalController,
+    private router: Router, private loginService: LoginService,
+    public alertController: AlertController,public toastController: ToastController) { }
 
 
   ngOnInit() {

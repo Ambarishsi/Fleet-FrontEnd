@@ -91,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".tele {\n  font-weight: 600;\n  font-size: 1.5rem;\n}\n\n.call-person {\n  color: #6a64ff;\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGFkbWluLWhlbHBkZXNrLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsaUJBQUE7QUFDRjs7QUFDQTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtBQUVGIiwiZmlsZSI6ImFkbWluLWhlbHBkZXNrLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi50ZWxle1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgZm9udC1zaXplOiAxLjVyZW07XHJcbn1cclxuLmNhbGwtcGVyc29ue1xyXG4gIGNvbG9yOiM2YTY0ZmY7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".tele {\n  font-weight: 600;\n  font-size: 1.5rem;\n}\n\n.call-person {\n  color: #6a64ff;\n  font-weight: 600;\n}\n\na {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGFkbWluLWhlbHBkZXNrLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsaUJBQUE7QUFDRjs7QUFFQTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtBQUNGOztBQUVBO0VBQ0UscUJBQUE7QUFDRiIsImZpbGUiOiJhZG1pbi1oZWxwZGVzay5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGVsZXtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG4gIGZvbnQtc2l6ZTogMS41cmVtO1xyXG59XHJcblxyXG4uY2FsbC1wZXJzb257XHJcbiAgY29sb3I6IzZhNjRmZjtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG5he1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -173,6 +173,64 @@ const createButtonActiveGesture = (el, isButton) => {
 
 
 
+
+/***/ }),
+
+/***/ "Lo9z":
+/*!*********************************************!*\
+  !*** ./src/app/trip-info/trip-info.page.ts ***!
+  \*********************************************/
+/*! exports provided: TripInfoPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TripInfoPage", function() { return TripInfoPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_trip_info_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./trip-info.page.html */ "gug6");
+/* harmony import */ var _trip_info_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./trip-info.page.scss */ "XHbK");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+let TripInfoPage = class TripInfoPage {
+    constructor(modalControlTripInfo) {
+        this.modalControlTripInfo = modalControlTripInfo;
+    }
+    ngOnInit() {
+    }
+    dismissTripInfo() {
+        this.modalControlTripInfo.dismiss();
+    }
+};
+TripInfoPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+TripInfoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-trip-info',
+        template: _raw_loader_trip_info_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_trip_info_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], TripInfoPage);
+
+
+
+/***/ }),
+
+/***/ "XHbK":
+/*!***********************************************!*\
+  !*** ./src/app/trip-info/trip-info.page.scss ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ0cmlwLWluZm8ucGFnZS5zY3NzIn0= */");
 
 /***/ }),
 
@@ -335,6 +393,19 @@ TechSupportPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], TechSupportPage);
 
 
+
+/***/ }),
+
+/***/ "gug6":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/trip-info/trip-info.page.html ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Trip Info</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismissTripInfo()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n");
 
 /***/ }),
 
