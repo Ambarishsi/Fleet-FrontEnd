@@ -1,0 +1,78 @@
+.text-color{
+  color: #949494;
+  font-weight: 600;
+}
+
+.right{
+  float: right;
+}
+
+.alert-info{
+  margin-bottom: 0;
+}
+
+summary[role=button] {
+  background-color:#045089;
+  color: #fff;
+  padding: 0.5em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+summary[role=button]:hover, summary[role=button]:focus,
+summary::marker {color:  #3dc2ff}
+details {
+  border: 1px solid #045089;
+  margin-bottom: 0.55em;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.margin{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+details p {padding: 0 1em;}
+
+p{
+  color: #949494;
+}
+
+.rounded-corner{
+  padding-top: 2rem;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  background-color: #b3e5f1ea;
+  margin:0;
+  height: 100vh;
+}
+
+.color{
+  color: #949494;
+  font-weight: 600;
+}
+
+a{
+  text-decoration: none;
+}
+
+ion-avatar {
+  width: 80px;
+  height: 80px;
+}
+
+.map{
+  float: right;
+  color: #eb445a;
+}
+.size{
+  font-size: 3.5rem;
+}
+
+.location-content{
+  color:#949494;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
