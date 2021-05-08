@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Fleet\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">fleet</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n\r\n  <ion-card>\r\n    <ion-item>\r\n      <ion-icon name=\"person\" slot=\"end\"></ion-icon>\r\n      <ion-chip  color=\"primary\">\r\n        <ion-label class=\"label-color\">{{employeeName}}</ion-label>\r\n      </ion-chip>\r\n    </ion-item>\r\n\r\n    <ion-card-content>\r\n      Employee ID: {{employeeId}}\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-list>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalProfile()\" >\r\n        <ion-icon name=\"person\" > </ion-icon>\r\n          Profile\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" >\r\n        <ion-icon name=\"navigate\"></ion-icon>\r\n          Special Request\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalAdminHelpdesk()\">\r\n        <ion-icon name=\"call\"></ion-icon>\r\n          Admin Helpdesk\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalTechSupport()\">\r\n        <ion-icon name=\"laptop\"></ion-icon>\r\n          Tech Support\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" routerLink=\"/login\">\r\n        <ion-icon name=\"log-out\"></ion-icon>\r\n          Logout\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n  </ion-list>\r\n\r\n\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Fleet\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">fleet</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n\r\n  <ion-card>\r\n    <ion-item>\r\n      <ion-icon name=\"person\" slot=\"end\"></ion-icon>\r\n      <ion-chip  color=\"primary\">\r\n        <ion-label class=\"label-color\">{{employeeName}}</ion-label>\r\n      </ion-chip>\r\n    </ion-item>\r\n\r\n    <ion-card-content>\r\n      Employee ID: {{employeeId}}\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-list>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalProfile()\" >\r\n        <ion-icon name=\"person\" > </ion-icon>\r\n          Profile\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" >\r\n        <ion-icon name=\"navigate\"></ion-icon>\r\n          Special Request\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalAdminHelpdesk()\">\r\n        <ion-icon name=\"call\"></ion-icon>\r\n          Admin Helpdesk\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" (click)=\"showModalTechSupport()\">\r\n        <ion-icon name=\"laptop\"></ion-icon>\r\n          Tech Support\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\" routerLink=\"/login\">\r\n        <ion-icon name=\"log-out\"></ion-icon>\r\n          Logout\r\n        </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label color=\"primary\">\r\n        <ion-icon name=\"moon\"></ion-icon>\r\n        Dark Mode\r\n      </ion-label>\r\n      <ion-toggle slot=\"end\" name=\"darkMode\" [disabled]=\"darkmodeFlagAuto\" (click)=\"toggleDarkModeHandler($event)\" color=\"tertiary\"></ion-toggle>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n\r\n      <ion-label color=\"primary\">\r\n        <ion-icon name=\"contrast\"></ion-icon>\r\n        Auto\r\n      </ion-label>\r\n      <ion-toggle slot=\"end\" name=\"darkMode\" [disabled]=\"darkmodeFlag\" (click)=\"toggleDarkModeAutoHandler($event)\" color=\"tertiary\"></ion-toggle>\r\n    </ion-item>\r\n\r\n  </ion-list>\r\n\r\n\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -52,6 +52,18 @@ let Tab1Page = class Tab1Page {
         this.passdataprofileService = passdataprofileService;
         this.toastController = toastController;
         this.userId = '609100323a6c2c2ec62e6577';
+        this.darkmodeFlag = false;
+        this.darkmodeFlagAuto = false;
+        //darkmode
+        this.toggleDarkModeHandler = (event) => {
+            document.body.classList.toggle('dark');
+            if (event.target.ariaChecked === 'false') {
+                this.darkmodeFlag = true;
+            }
+            else {
+                this.darkmodeFlag = false;
+            }
+        };
     }
     ngOnInit() {
         this.userInfo();
@@ -131,6 +143,36 @@ let Tab1Page = class Tab1Page {
         }, err => {
             console.log(err);
         });
+    }
+    toggleDarkModeAutoHandler(ev) {
+        if (ev.target.ariaChecked === 'false') {
+            this.darkmodeFlagAuto = true;
+            this.applyDarkMode();
+        }
+        else {
+            this.darkmodeFlagAuto = false;
+            this.applyDarkMode();
+        }
+    }
+    applyDarkMode() {
+        this.currTime = this.calculateCurrentTime(new Date()).toString();
+        // eslint-disable-next-line radix
+        if (this.currTime.substring(6) === 'pm' && parseInt(this.currTime.substring(0, 2)) >= 6) {
+            document.body.classList.toggle('dark');
+        }
+        else {
+            document.body.classList.toggle('light');
+        }
+    }
+    calculateCurrentTime(date) {
+        this.hours = date.getHours();
+        this.minutes = date.getMinutes();
+        const ampm = this.hours >= 12 ? 'pm' : 'am';
+        this.hours = this.hours % 12;
+        this.hours = this.hours ? this.hours : 12;
+        this.minutes = this.minutes < 10 ? '0' + this.minutes : this.minutes;
+        this.strTime = this.hours + ':' + this.minutes + ' ' + ampm;
+        return this.strTime;
     }
 };
 Tab1Page.ctorParameters = () => [
@@ -244,7 +286,7 @@ EmployeeService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  font-size: 20px;\n}\n\n.label-color {\n  color: #6a64ff;\n}\n\nion-item {\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRhYjEucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtBQUNGOztBQUNBO0VBQ0UsY0FBQTtBQUVGOztBQUNBO0VBQ0UsZ0JBQUE7QUFFRiIsImZpbGUiOiJ0YWIxLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pY29uIHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbn1cclxuLmxhYmVsLWNvbG9ye1xyXG4gIGNvbG9yOiM2YTY0ZmY7XHJcbn1cclxuXHJcbmlvbi1pdGVte1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  font-size: 20px;\n}\n\n.label-color {\n  color: #6a64ff;\n}\n\nion-item {\n  font-weight: 600;\n}\n\nion-toggle {\n  --background: #000;\n  --background-checked: #7a49a5;\n  --handle-background: #7a49a5;\n  --handle-background-checked: #000;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRhYjEucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtBQUNGOztBQUNBO0VBQ0UsY0FBQTtBQUVGOztBQUNBO0VBQ0UsZ0JBQUE7QUFFRjs7QUFDQTtFQUNFLGtCQUFBO0VBQ0EsNkJBQUE7RUFFQSw0QkFBQTtFQUNBLGlDQUFBO0FBQ0YiLCJmaWxlIjoidGFiMS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taWNvbiB7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG59XHJcbi5sYWJlbC1jb2xvcntcclxuICBjb2xvcjojNmE2NGZmO1xyXG59XHJcblxyXG5pb24taXRlbXtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG5pb24tdG9nZ2xlIHtcclxuICAtLWJhY2tncm91bmQ6ICMwMDA7XHJcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICM3YTQ5YTU7XHJcblxyXG4gIC0taGFuZGxlLWJhY2tncm91bmQ6ICM3YTQ5YTU7XHJcbiAgLS1oYW5kbGUtYmFja2dyb3VuZC1jaGVja2VkOiAjMDAwO1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 

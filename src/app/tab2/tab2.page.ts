@@ -48,7 +48,6 @@ export class Tab2Page implements OnInit, OnDestroy{
 
   segmentChanged(ev: any) {
     this.currentSegmentValue = ev.detail.value;
-    console.log('Segment changed', this.currentSegmentValue);
   }
 
 

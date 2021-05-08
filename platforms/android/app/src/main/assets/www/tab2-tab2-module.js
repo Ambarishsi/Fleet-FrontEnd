@@ -125,7 +125,6 @@ let Tab2Page = class Tab2Page {
     }
     segmentChanged(ev) {
         this.currentSegmentValue = ev.detail.value;
-        console.log('Segment changed', this.currentSegmentValue);
     }
 };
 Tab2Page.ctorParameters = () => [];

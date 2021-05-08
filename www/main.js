@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
 
 /***/ }),
 
@@ -972,7 +972,7 @@ const routes = [
     },
     {
         path: 'trip-info',
-        loadChildren: () => Promise.all(/*! import() | trip-info-trip-info-module */[__webpack_require__.e("default~tab2-tab2-module~trip-info-trip-info-module"), __webpack_require__.e("trip-info-trip-info-module")]).then(__webpack_require__.bind(null, /*! ./trip-info/trip-info.module */ "xUwp")).then(m => m.TripInfoPageModule)
+        loadChildren: () => Promise.all(/*! import() | trip-info-trip-info-module */[__webpack_require__.e("common"), __webpack_require__.e("trip-info-trip-info-module")]).then(__webpack_require__.bind(null, /*! ./trip-info/trip-info.module */ "xUwp")).then(m => m.TripInfoPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
