@@ -36,6 +36,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/* eslint-disable radix */
 
 
 
@@ -156,17 +157,16 @@ let Tab1Page = class Tab1Page {
     }
     applyDarkMode() {
         this.currTime = this.calculateCurrentTime(new Date()).toString();
-        // eslint-disable-next-line radix
         if (this.currTime.substring(6) === 'pm' && parseInt(this.currTime.substring(0, 2)) >= 6) {
             document.body.classList.toggle('dark');
-            // eslint-disable-next-line radix
         }
-        else if (this.currTime.substring(6) === 'am' &&
-            // eslint-disable-next-line radix
-            (parseInt(this.currTime.substring(0, 2)) >= 12 &&
-                // eslint-disable-next-line radix
-                parseInt(this.currTime.substring(0, 2)) <= 6)) {
-            document.body.classList.toggle('dark');
+        else if (this.currTime.substring(6) === 'am') {
+            if (parseInt(this.currTime.substring(0, 2)) === 12) {
+                document.body.classList.toggle('dark');
+            }
+            else if (parseInt(this.currTime.substring(0, 2)) <= 6) {
+                document.body.classList.toggle('dark');
+            }
         }
         else {
             document.body.classList.toggle('light');
