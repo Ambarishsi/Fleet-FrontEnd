@@ -159,6 +159,14 @@ let Tab1Page = class Tab1Page {
         // eslint-disable-next-line radix
         if (this.currTime.substring(6) === 'pm' && parseInt(this.currTime.substring(0, 2)) >= 6) {
             document.body.classList.toggle('dark');
+            // eslint-disable-next-line radix
+        }
+        else if (this.currTime.substring(6) === 'am' &&
+            // eslint-disable-next-line radix
+            (parseInt(this.currTime.substring(0, 2)) >= 12 &&
+                // eslint-disable-next-line radix
+                parseInt(this.currTime.substring(0, 2)) <= 6)) {
+            document.body.classList.toggle('dark');
         }
         else {
             document.body.classList.toggle('light');
