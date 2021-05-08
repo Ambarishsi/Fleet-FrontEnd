@@ -972,7 +972,7 @@ const routes = [
     },
     {
         path: 'trip-info',
-        loadChildren: () => Promise.all(/*! import() | trip-info-trip-info-module */[__webpack_require__.e("common"), __webpack_require__.e("trip-info-trip-info-module")]).then(__webpack_require__.bind(null, /*! ./trip-info/trip-info.module */ "xUwp")).then(m => m.TripInfoPageModule)
+        loadChildren: () => Promise.all(/*! import() | trip-info-trip-info-module */[__webpack_require__.e("default~tab2-tab2-module~trip-info-trip-info-module"), __webpack_require__.e("trip-info-trip-info-module")]).then(__webpack_require__.bind(null, /*! ./trip-info/trip-info.module */ "xUwp")).then(m => m.TripInfoPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {

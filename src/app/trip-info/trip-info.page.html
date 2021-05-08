@@ -98,5 +98,35 @@
     </div>
   </div>
 
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" class="bottom">
+    <ion-fab-button  color="warning">
+      <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner"name="checkmark-circle"></ion-icon>
+          <ion-label>Boarded</ion-label>
+        </ion-chip>
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner" name="close-circle"></ion-icon>
+          <ion-label>NoShow</ion-label>
+        </ion-chip>
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner" name="checkmark-done-circle"></ion-icon>
+          <ion-label>Alighted</ion-label>
+        </ion-chip>
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner" name="help-circle"></ion-icon>
+          <ion-label>Waiting</ion-label>
+        </ion-chip>
+
+    </ion-fab-list>
+  </ion-fab>
+
 </div>
 </ion-content>

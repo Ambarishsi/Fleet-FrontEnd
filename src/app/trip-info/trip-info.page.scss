@@ -38,7 +38,7 @@ p{
 }
 
 .rounded-corner{
-  padding-top: 2rem;
+  padding-top: 3rem;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   background-color: #b3e5f1ea;
@@ -75,4 +75,20 @@ ion-avatar {
   padding-bottom: 5px;
 }
 
+// ion-fab{
+//   top: 165px;
+// }
 
+.fab-inner{
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.ionchip{
+  left: -4em;
+  background-color: #ffc409;
+}
+.bottom{
+  position: fixed;
+
+}
