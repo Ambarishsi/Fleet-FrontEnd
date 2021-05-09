@@ -157,10 +157,12 @@ let Tab1Page = class Tab1Page {
     }
     applyDarkMode() {
         this.currTime = this.calculateCurrentTime(new Date()).toString();
-        if (this.currTime.substring(6) === 'pm' && parseInt(this.currTime.substring(0, 2)) >= 6) {
-            document.body.classList.toggle('dark');
+        if (this.currTime.includes('pm')) {
+            if (parseInt(this.currTime.substring(0, 2)) >= 6) {
+                document.body.classList.toggle('dark');
+            }
         }
-        else if (this.currTime.substring(6) === 'am') {
+        else if (this.currTime.includes('am')) {
             if (parseInt(this.currTime.substring(0, 2)) === 12) {
                 document.body.classList.toggle('dark');
             }
