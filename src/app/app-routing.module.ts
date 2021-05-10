@@ -33,6 +33,10 @@ const routes: Routes = [
   },  {
     path: 'trip-info',
     loadChildren: () => import('./trip-info/trip-info.module').then( m => m.TripInfoPageModule)
+  },
+  {
+    path: 'schedule-info',
+    loadChildren: () => import('./schedule-info/schedule-info.module').then( m => m.ScheduleInfoPageModule)
   }
 
 

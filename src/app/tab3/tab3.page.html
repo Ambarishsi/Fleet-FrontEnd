@@ -6,7 +6,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+
+<ion-content [fullscreen]="true" class="gesture__zone">
+
+  <ion-segment (ionChange)="segmentChanged($event)" value={{currentSegmentValue}} color="primary" >
+    <ion-segment-button value="Revision" class="btn-color">
+      <ion-label>Revison</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Future" class="btn-color">
+      <ion-label>Future</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+  
+  <div *ngIf="currentSegmentValue === 'Revision'" >
+    <app-myschedule-revision></app-myschedule-revision>
+  </div>
+  
+  <div *ngIf="currentSegmentValue === 'Future'" >
+    <app-myschedule-future></app-myschedule-future>
+  </div>
+  
+  
+  
+  
+  </ion-content>
+
+<!-- <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">fleet</ion-title>
@@ -79,4 +105,4 @@
 
 
   
-</ion-content>
+</ion-content> -->
