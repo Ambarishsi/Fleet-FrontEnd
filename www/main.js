@@ -389,6 +389,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _profile_profile_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profile/profile.module */ "cRhG");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "Bfh1");
+
 
 
 
@@ -414,7 +416,8 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]
         ],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }],
+        providers: [_ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_11__["Geolocation"],
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
     })
 ], AppModule);
@@ -438,23 +441,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_address_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit-address.page.scss */ "YIsq");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "Bfh1");
+
 
 
 
 
 
 let EditAddressPage = class EditAddressPage {
-    constructor(modalCtrlEditAddress) {
+    constructor(modalCtrlEditAddress, geolocation) {
         this.modalCtrlEditAddress = modalCtrlEditAddress;
+        this.geolocation = geolocation;
     }
     ngOnInit() {
+    }
+    getLatLong() {
+        this.geolocation.getCurrentPosition({
+            timeout: 10000,
+            enableHighAccuracy: true
+        }).then((res) => {
+            this.lat = res.coords.latitude;
+            this.long = res.coords.longitude;
+        }).catch((e) => {
+            console.log(e);
+        });
     }
     dismiss() {
         this.modalCtrlEditAddress.dismiss();
     }
 };
 EditAddressPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
+    { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__["Geolocation"] }
 ];
 EditAddressPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -556,7 +574,7 @@ LoginPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Edit Address</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Edit Address</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <p>Lat: {{lat}}, Lng: {{long}}</p>\n  <ion-button (click)=\"getLatLong()\">Get Lat Long</ion-button>\n</ion-content>\n");
 
 /***/ }),
 
@@ -972,11 +990,15 @@ const routes = [
     },
     {
         path: 'trip-info',
-        loadChildren: () => Promise.all(/*! import() | trip-info-trip-info-module */[__webpack_require__.e("common"), __webpack_require__.e("trip-info-trip-info-module")]).then(__webpack_require__.bind(null, /*! ./trip-info/trip-info.module */ "xUwp")).then(m => m.TripInfoPageModule)
+        loadChildren: () => Promise.all(/*! import() | trip-info-trip-info-module */[__webpack_require__.e("default~tab2-tab2-module~trip-info-trip-info-module"), __webpack_require__.e("trip-info-trip-info-module")]).then(__webpack_require__.bind(null, /*! ./trip-info/trip-info.module */ "xUwp")).then(m => m.TripInfoPageModule)
     },
     {
         path: 'schedule-info',
         loadChildren: () => Promise.all(/*! import() | schedule-info-schedule-info-module */[__webpack_require__.e("common"), __webpack_require__.e("schedule-info-schedule-info-module")]).then(__webpack_require__.bind(null, /*! ./schedule-info/schedule-info.module */ "08d7")).then(m => m.ScheduleInfoPageModule)
+    },
+    {
+        path: 'live-tracking',
+        loadChildren: () => __webpack_require__.e(/*! import() | live-tracking-live-tracking-module */ "live-tracking-live-tracking-module").then(__webpack_require__.bind(null, /*! ./live-tracking/live-tracking.module */ "9UlA")).then(m => m.LiveTrackingPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
