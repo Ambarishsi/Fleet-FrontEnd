@@ -1,0 +1,132 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Trip Info</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)='dismissTripInfo()'>Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<div slot="fixed" style="width: 100%;">
+        <div class="alert alert-info" >
+          <strong style="float:left">
+            <ion-icon name="time"></ion-icon>
+            Pickup at 13:54 </strong>
+            <strong style="float:right">
+              <ion-icon name="lock-closed"></ion-icon>
+              8028
+            </strong>&nbsp;PM
+        </div>
+
+<div  >
+    <ion-list >
+      <ion-item lines="none" >
+        <ion-avatar slot="start">
+          <img src="../../assets/ambarish.jpg" >
+        </ion-avatar>
+        <ion-label class="color" >
+          <p>Driver Name: RAVI</p>
+          <p>Vehicle No: MH NB0</p>
+            <ion-label color="primary" class="tele">
+              <ion-icon name="call"></ion-icon>
+              <a href="tel:9304387089">&emsp;9304387089</a>
+            </ion-label>
+        </ion-label>
+        <div class="map">
+          <ion-icon name="navigate-circle" class="size"></ion-icon>
+          <!-- <br>
+          <small>Tracking</small> -->
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+    <div class="rounded-corner" >
+      <div class="margin">
+      <details>
+        <summary role="button" tabindex="0">
+            Ambarish
+          <div style="float: right;">
+            109447
+          </div>
+        </summary>
+
+        <div class="location-content">
+        <ion-icon name="pin"></ion-icon>
+          Marathalli, Bangalore
+        </div>
+
+      </details>
+      <details>
+        <summary role="button" tabindex="0">
+          Ambarish
+          <div style="float: right;">
+            109447
+          </div>
+        </summary>
+        <div class="location-content">
+          <ion-icon name="pin"></ion-icon>
+            Marathalli, Bangalore
+          </div>
+      </details>
+      <details>
+        <summary role="button" aria-expanded="false" tabindex="0">
+          Ambarish
+          <div style="float: right;">
+            109447
+          </div>
+        </summary>
+        <div class="location-content">
+          <ion-icon name="pin"></ion-icon>
+            Marathalli, Bangalore
+          </div>
+      </details>
+      <details>
+        <summary role="button" tabindex="0">
+          Ambarish
+          <div style="float: right;">
+            109447
+          </div>
+        </summary>
+        <div class="location-content">
+          <ion-icon name="pin"></ion-icon>
+            Marathalli, Bangalore
+          </div>
+      </details>
+    </div>
+  </div>
+
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" class="bottom">
+    <ion-fab-button  color="warning">
+      <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner"name="checkmark-circle"></ion-icon>
+          <ion-label>Boarded</ion-label>
+        </ion-chip>
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner" name="close-circle"></ion-icon>
+          <ion-label>NoShow</ion-label>
+        </ion-chip>
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner" name="checkmark-done-circle"></ion-icon>
+          <ion-label>Alighted</ion-label>
+        </ion-chip>
+
+        <ion-chip class="ionchip">
+          <ion-icon class="fab-inner" name="help-circle"></ion-icon>
+          <ion-label>Waiting</ion-label>
+        </ion-chip>
+
+    </ion-fab-list>
+  </ion-fab>
+
+</div>
+</ion-content>

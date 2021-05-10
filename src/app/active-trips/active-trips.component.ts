@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IonRouterOutlet, ModalController } from '@ionic/angular';
+import { TripInfoPage } from '../trip-info/trip-info.page';
 
 @Component({
   selector: 'app-active-trips',
@@ -7,8 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveTripsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modalCtrlTripInfo: ModalController,
+    private routerOutletTripInfo: IonRouterOutlet) { }
 
   ngOnInit() {}
 
+  //showModalTripInfo
+  async showModalTripInfo() {
+    const modalTripInfo = await this.modalCtrlTripInfo.create({
+      component: TripInfoPage,
+      swipeToClose: true,
+      presentingElement: this.routerOutletTripInfo.nativeEl
+    });
+
+    return await modalTripInfo.present();
+  }
 }

@@ -36,8 +36,12 @@ __webpack_require__.r(__webpack_exports__);
 let TabsPage = class TabsPage {
     constructor(router) {
         this.router = router;
-        if (localStorage.getItem("UserData") == null || localStorage.getItem("UserData") == undefined) {
+        if (localStorage.getItem('UserData') === null || localStorage.getItem('UserData') === undefined ||
+            localStorage.getItem('UserData') === '') {
             this.router.navigateByUrl('/login');
+        }
+        else {
+            this.router.navigateByUrl('/tabs/tab2');
         }
     }
 };
@@ -140,7 +144,7 @@ const routes = [
             },
             {
                 path: 'tab2',
-                loadChildren: () => __webpack_require__.e(/*! import() | tab2-tab2-module */ "tab2-tab2-module").then(__webpack_require__.bind(null, /*! ../tab2/tab2.module */ "TUkU")).then(m => m.Tab2PageModule)
+                loadChildren: () => Promise.all(/*! import() | tab2-tab2-module */[__webpack_require__.e("common"), __webpack_require__.e("tab2-tab2-module")]).then(__webpack_require__.bind(null, /*! ../tab2/tab2.module */ "TUkU")).then(m => m.Tab2PageModule)
             },
             {
                 path: 'tab3',

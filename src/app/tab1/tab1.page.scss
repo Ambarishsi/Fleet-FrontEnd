@@ -4,3 +4,15 @@ ion-icon {
 .label-color{
   color:#6a64ff;
 }
+
+ion-item{
+  font-weight: 600;
+}
+
+ion-toggle {
+  --background: #000;
+  --background-checked: #7a49a5;
+
+  --handle-background: #7a49a5;
+  --handle-background-checked: #000;
+}

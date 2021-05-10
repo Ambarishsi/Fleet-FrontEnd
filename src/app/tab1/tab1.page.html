@@ -68,3 +68,22 @@
 
 
 </ion-content>
+
+<ion-footer class='bar-stable'>
+  <ion-item>
+    <ion-label color="primary">
+      <ion-icon name="bulb"></ion-icon>
+      Dark Mode
+    </ion-label>
+    <ion-toggle slot="end" name="darkMode" [disabled]="darkmodeFlagAuto" (click)="toggleDarkModeHandler($event)" color="tertiary"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label color="primary">
+      <ion-icon name="moon"></ion-icon>
+      Auto
+    </ion-label>
+    <ion-toggle slot="end" name="darkMode" [disabled]="darkmodeFlag" (click)="toggleDarkModeAutoHandler($event)" color="tertiary"></ion-toggle>
+  </ion-item>
+  </ion-footer>

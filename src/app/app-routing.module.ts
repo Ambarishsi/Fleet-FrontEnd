@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'roaster',
     loadChildren: () => import('./roaster/roaster.module').then( m => m.RoasterPageModule)
+  },  {
+    path: 'trip-info',
+    loadChildren: () => import('./trip-info/trip-info.module').then( m => m.TripInfoPageModule)
   }
+
 
 
 ];

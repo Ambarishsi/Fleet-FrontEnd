@@ -44,7 +44,7 @@ ScheduledTripComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhY3RpdmUtdHJpcHMuY29tcG9uZW50LnNjc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-card-subtitle {\n  font-weight: 600;\n}\n\nion-card-title {\n  font-weight: 600;\n}\n\n.bookmarkRibbon {\n  width: 105px;\n  height: 0;\n  border-bottom: 20px solid #045089;\n  border-top: 20px solid #045089;\n  border-left: 15px solid transparent;\n  float: right;\n  margin-bottom: 20px;\n  font-size: 17px;\n  font-weight: 700;\n  position: absolute;\n  right: 0px;\n  top: 20px;\n  z-index: 999;\n}\n\n.bookmarkText {\n  color: #ffffff;\n  position: relative;\n  top: -11.5px;\n  text-align: center;\n  right: -18px;\n  z-index: 999;\n}\n\nion-card {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGFjdGl2ZS10cmlwcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxnQkFBQTtBQUNGOztBQUVBO0VBQ0UsWUFBQTtFQUNBLFNBQUE7RUFDQSxpQ0FBQTtFQUNBLDhCQUFBO0VBQ0EsbUNBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtBQUNGOztBQUVBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7QUFDRjs7QUFFQTtFQUNFLGVBQUE7QUFDRiIsImZpbGUiOiJhY3RpdmUtdHJpcHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY2FyZC1zdWJ0aXRsZXtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG5pb24tY2FyZC10aXRsZXtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG4uYm9va21hcmtSaWJib24ge1xyXG4gIHdpZHRoOiAxMDVweDtcclxuICBoZWlnaHQ6IDA7XHJcbiAgYm9yZGVyLWJvdHRvbTogMjBweCBzb2xpZCAjMDQ1MDg5O1xyXG4gIGJvcmRlci10b3A6IDIwcHggc29saWQgIzA0NTA4OTtcclxuICBib3JkZXItbGVmdDogMTVweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICBmbG9hdDogcmlnaHQ7XHJcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxuICBmb250LXNpemU6IDE3cHg7XHJcbiAgZm9udC13ZWlnaHQ6NzAwO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICByaWdodDogMHB4O1xyXG4gIHRvcDogMjBweDtcclxuICB6LWluZGV4OiA5OTk7XHJcbn1cclxuXHJcbi5ib29rbWFya1RleHR7XHJcbiAgY29sb3I6I2ZmZmZmZjtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgdG9wOiAtMTEuNXB4O1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICByaWdodDogLTE4cHg7XHJcbiAgei1pbmRleDogOTk5O1xyXG59XHJcblxyXG5pb24tY2FyZHtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuIl19 */");
 
 /***/ }),
 
@@ -57,7 +57,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzY2hlZHVsZWQtdHJpcC5jb21wb25lbnQuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (".ion-center {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n}\n\nion-img {\n  height: 15rem;\n  width: 15rem;\n}\n\n.time {\n  font-weight: 600;\n  display: flex;\n  justify-content: center;\n  font-size: 1rem;\n}\n\n.bold {\n  font-weight: 600;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHNjaGVkdWxlZC10cmlwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0Esa0JBQUE7QUFDRjs7QUFFQTtFQUNFLGFBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBRUE7RUFDRSxnQkFBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLGVBQUE7QUFDRjs7QUFFQTtFQUNFLGdCQUFBO0FBQ0YiLCJmaWxlIjoic2NoZWR1bGVkLXRyaXAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW9uLWNlbnRlcntcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuaW9uLWltZ3tcclxuICBoZWlnaHQ6IDE1cmVtO1xyXG4gIHdpZHRoOiAxNXJlbTtcclxufVxyXG5cclxuLnRpbWV7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGZvbnQtc2l6ZTogMXJlbTtcclxufVxyXG5cclxuLmJvbGR7XHJcbiAgZm9udC13ZWlnaHQ6IDYwMDtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -70,7 +70,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".btn-color {\n  color: #42d77d;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRhYjIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtBQUNGIiwiZmlsZSI6InRhYjIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJ0bi1jb2xvcntcclxuICBjb2xvcjojNDJkNzdkO1xyXG59XHJcblxyXG4iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".btn-color {\n  color: #42d77d;\n}\n.btn-color:hover {\n  color: #045089;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRhYjIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBQTtBQUNGO0FBQUU7RUFDRSxjQUFBO0FBRUoiLCJmaWxlIjoidGFiMi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnRuLWNvbG9ye1xyXG4gIGNvbG9yOiM0MmQ3N2Q7XHJcbiAgJjpob3ZlcntcclxuICAgIGNvbG9yOiAjMDQ1MDg5O1xyXG4gIH1cclxufVxyXG5cclxuIl19 */");
 
 /***/ }),
 
@@ -125,7 +125,6 @@ let Tab2Page = class Tab2Page {
     }
     segmentChanged(ev) {
         this.currentSegmentValue = ev.detail.value;
-        console.log('Segment changed', this.currentSegmentValue);
     }
 };
 Tab2Page.ctorParameters = () => [];
@@ -150,7 +149,7 @@ Tab2Page = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p style=\"background-color: cyan;\">\n  scheduled-trip works!\n</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-card color=\"secondary\">\n  <ion-card-content class=\"time\">\n    <!-- <ion-icon name=\"time\"></ion-icon> -->\n        Monday, 25 Jan, 2021\n</ion-card-content>\n</ion-card>\n\n\n<ion-grid>\n  <ion-row>\n    <ion-col class=\"ion-center\">\n      <ion-img src=\"../../assets/office.png\"></ion-img>\n    </ion-col>\n  </ion-row>\n</ion-grid>\n\n<ion-card color=\"secondary\">\n  <ion-card-content>\n    <ion-grid>\n      <ion-row>\n        <ion-col class=\"ion-center\">\n            <ion-label>\n              <h3>Login Time</h3>\n              <h2 class=\"bold\">11:00</h2>\n            </ion-label>\n        </ion-col>\n\n        <ion-col class=\"ion-center\">\n            <ion-label>\n              <h3 >Logout Time</h3>\n              <h2 class=\"bold\">20:00</h2>\n            </ion-label>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card-content>\n</ion-card>\n\n\n\n");
 
 /***/ }),
 
@@ -284,7 +283,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p style=\"background-color: red;\">\n  active-trips works!\n</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-grid>\n  <ion-row>\n\n    <ion-col class=\"ion-center\">\n      <div class=\"bookmarkRibbon\">\n        <span class=\"bookmarkText\">\n        23 May\n        </span>\n      </div>\n      <ion-card color=\"primary\" (click)=\"showModalTripInfo()\">\n        <ion-card-header>\n          <ion-card-subtitle>\n            <ion-icon name=\"time\"></ion-icon>\n              Pickup trip @ 14:54\n          </ion-card-subtitle>\n          <ion-card-title>\n            <ion-icon name=\"car-sport\"></ion-icon>\n              Vehicle No: MH1 BD7\n          </ion-card-title>\n        </ion-card-header>\n\n        <ion-card-content>\n          <p>\n          <ion-icon name=\"person\"></ion-icon>\n           Driver: RAVI\n          </p>\n          <p>\n           <ion-icon name=\"location\"></ion-icon>\n           From: 15 Number\n          </p>\n          <p>\n           <ion-icon name=\"location\"></ion-icon>\n           To: T6\n          </p>\n        </ion-card-content>\n      </ion-card>\n    </ion-col>\n  </ion-row>\n</ion-grid>\n");
 
 /***/ }),
 
@@ -302,15 +301,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_active_trips_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./active-trips.component.html */ "jV1O");
 /* harmony import */ var _active_trips_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./active-trips.component.scss */ "0wQe");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _trip_info_trip_info_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../trip-info/trip-info.page */ "Lo9z");
+
+
 
 
 
 
 let ActiveTripsComponent = class ActiveTripsComponent {
-    constructor() { }
+    constructor(modalCtrlTripInfo, routerOutletTripInfo) {
+        this.modalCtrlTripInfo = modalCtrlTripInfo;
+        this.routerOutletTripInfo = routerOutletTripInfo;
+    }
     ngOnInit() { }
+    //showModalTripInfo
+    showModalTripInfo() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const modalTripInfo = yield this.modalCtrlTripInfo.create({
+                component: _trip_info_trip_info_page__WEBPACK_IMPORTED_MODULE_5__["TripInfoPage"],
+                swipeToClose: true,
+                presentingElement: this.routerOutletTripInfo.nativeEl
+            });
+            return yield modalTripInfo.present();
+        });
+    }
 };
-ActiveTripsComponent.ctorParameters = () => [];
+ActiveTripsComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonRouterOutlet"] }
+];
 ActiveTripsComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: 'app-active-trips',
