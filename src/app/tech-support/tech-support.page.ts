@@ -9,9 +9,13 @@ import { LoadingController } from '@ionic/angular';
 })
 export class TechSupportPage implements OnInit, AfterViewInit{
 
+
+
   constructor(public modalCtrlTechSupport: ModalController,
     private renderer: Renderer2,
-    public loadingController: LoadingController) { }
+    public loadingController: LoadingController) {
+
+    }
 
   ngOnInit() {
 
@@ -26,7 +30,7 @@ export class TechSupportPage implements OnInit, AfterViewInit{
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Connecting...',
-      duration: 2000,
+      duration: 4000,
       backdropDismiss: false
     });
     await loading.present();
@@ -35,8 +39,14 @@ export class TechSupportPage implements OnInit, AfterViewInit{
     // console.log('Loading dismissed!');
   }
 
+
+  myLoadEvent(){
+console.log('its loaded');
+  }
+
   dismissTechSupport() {
     this.modalCtrlTechSupport.dismiss();
   }
+
 
 }

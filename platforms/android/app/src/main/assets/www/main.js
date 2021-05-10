@@ -973,6 +973,10 @@ const routes = [
     {
         path: 'trip-info',
         loadChildren: () => Promise.all(/*! import() | trip-info-trip-info-module */[__webpack_require__.e("common"), __webpack_require__.e("trip-info-trip-info-module")]).then(__webpack_require__.bind(null, /*! ./trip-info/trip-info.module */ "xUwp")).then(m => m.TripInfoPageModule)
+    },
+    {
+        path: 'schedule-info',
+        loadChildren: () => Promise.all(/*! import() | schedule-info-schedule-info-module */[__webpack_require__.e("common"), __webpack_require__.e("schedule-info-schedule-info-module")]).then(__webpack_require__.bind(null, /*! ./schedule-info/schedule-info.module */ "08d7")).then(m => m.ScheduleInfoPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
