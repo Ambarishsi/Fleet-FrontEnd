@@ -1,5 +1,50 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
+/***/ "3ns2":
+/*!*****************************************************!*\
+  !*** ./src/app/schedule-info/schedule-info.page.ts ***!
+  \*****************************************************/
+/*! exports provided: ScheduleInfoPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScheduleInfoPage", function() { return ScheduleInfoPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_schedule_info_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./schedule-info.page.html */ "ylr2");
+/* harmony import */ var _schedule_info_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./schedule-info.page.scss */ "7hGP");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+let ScheduleInfoPage = class ScheduleInfoPage {
+    constructor(modalControlTripInfo) {
+        this.modalControlTripInfo = modalControlTripInfo;
+    }
+    ngOnInit() {
+    }
+    dismissTripInfo() {
+        this.modalControlTripInfo.dismiss();
+    }
+};
+ScheduleInfoPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
+];
+ScheduleInfoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-schedule-info',
+        template: _raw_loader_schedule_info_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_schedule_info_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], ScheduleInfoPage);
+
+
+
+/***/ }),
+
 /***/ "74mu":
 /*!*************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js ***!
@@ -56,6 +101,19 @@ const openURL = async (url, ev, direction, animation) => {
 
 /***/ }),
 
+/***/ "7hGP":
+/*!*******************************************************!*\
+  !*** ./src/app/schedule-info/schedule-info.page.scss ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".text-color {\n  color: white;\n  font-weight: 600;\n}\n\n.right {\n  float: right;\n}\n\n.alert-info {\n  margin-bottom: 0;\n}\n\n.margin {\n  margin-left: 0.5rem;\n  margin-right: 0.5rem;\n}\n\ndetails p {\n  padding: 0 1em;\n}\n\np {\n  color: #949494;\n}\n\n.rounded-corner {\n  padding-top: 3rem;\n  border-top-right-radius: 25px;\n  border-top-left-radius: 25px;\n  background-color: #b3e5f1ea;\n  margin: 0;\n  height: 100vh;\n}\n\n.color {\n  color: #949494;\n  font-weight: 600;\n}\n\na {\n  text-decoration: none;\n}\n\nion-avatar {\n  width: 80px;\n  height: 80px;\n}\n\n.map {\n  float: right;\n}\n\n.size {\n  font-size: 3.5rem;\n}\n\n.location-content {\n  color: #949494;\n  font-weight: 600;\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n\n.fab-inner {\n  font-weight: 600;\n  font-size: 2rem;\n}\n\n.ionchip {\n  left: -4em;\n  background-color: #ffc409;\n}\n\n.bottom {\n  position: fixed;\n}\n\n.label-color {\n  color: #6a64ff;\n}\n\n.alertstyle {\n  width: 100%;\n  margin-top: 1rem;\n  padding-top: 2px;\n  padding-bottom: 2px;\n  font-size: 15px;\n}\n\n.small {\n  font-weight: 600;\n}\n\n.item {\n  margin: 10px auto;\n}\n\n.below-header {\n  margin-left: 23px;\n  margin-bottom: 14px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHNjaGVkdWxlLWluZm8ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLGdCQUFBO0FBQ0o7O0FBRUU7RUFDRSxZQUFBO0FBQ0o7O0FBRUU7RUFDRSxnQkFBQTtBQUNKOztBQUtFO0VBQ0UsbUJBQUE7RUFDQSxvQkFBQTtBQUZKOztBQUlFO0VBQVcsY0FBQTtBQUFiOztBQUVFO0VBQ0UsY0FBQTtBQUNKOztBQUVFO0VBQ0UsaUJBQUE7RUFDQSw2QkFBQTtFQUNBLDRCQUFBO0VBQ0EsMkJBQUE7RUFDQSxTQUFBO0VBQ0EsYUFBQTtBQUNKOztBQUVFO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0FBQ0o7O0FBRUU7RUFDRSxxQkFBQTtBQUNKOztBQUVFO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUFDSjs7QUFFRTtFQUNFLFlBQUE7QUFDSjs7QUFDRTtFQUNFLGlCQUFBO0FBRUo7O0FBQ0U7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0FBRUo7O0FBR0U7RUFDRSxnQkFBQTtFQUNBLGVBQUE7QUFBSjs7QUFHRTtFQUNFLFVBQUE7RUFDQSx5QkFBQTtBQUFKOztBQUVFO0VBQ0UsZUFBQTtBQUNKOztBQUlFO0VBQ0UsY0FBQTtBQURKOztBQUlFO0VBQ0UsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7QUFESjs7QUFLRTtFQUNFLGdCQUFBO0FBRko7O0FBTUU7RUFDRSxpQkFBQTtBQUhKOztBQU1FO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQUhKIiwiZmlsZSI6InNjaGVkdWxlLWluZm8ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRleHQtY29sb3J7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgfVxyXG4gIFxyXG4gIC5yaWdodHtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICB9XHJcbiAgXHJcbiAgLmFsZXJ0LWluZm97XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gIH1cclxuICBcclxuXHJcblxyXG5cclxuICAubWFyZ2lue1xyXG4gICAgbWFyZ2luLWxlZnQ6IDAuNXJlbTtcclxuICAgIG1hcmdpbi1yaWdodDogMC41cmVtO1xyXG4gIH1cclxuICBkZXRhaWxzIHAge3BhZGRpbmc6IDAgMWVtO31cclxuICBcclxuICBwe1xyXG4gICAgY29sb3I6ICM5NDk0OTQ7XHJcbiAgfVxyXG4gIFxyXG4gIC5yb3VuZGVkLWNvcm5lcntcclxuICAgIHBhZGRpbmctdG9wOiAzcmVtO1xyXG4gICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDI1cHg7XHJcbiAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAyNXB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2IzZTVmMWVhO1xyXG4gICAgbWFyZ2luOjA7XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG4gIH1cclxuICBcclxuICAuY29sb3J7XHJcbiAgICBjb2xvcjogIzk0OTQ5NDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgfVxyXG4gIFxyXG4gIGF7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgfVxyXG4gIFxyXG4gIGlvbi1hdmF0YXIge1xyXG4gICAgd2lkdGg6IDgwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIC5tYXB7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgfVxyXG4gIC5zaXple1xyXG4gICAgZm9udC1zaXplOiAzLjVyZW07XHJcbiAgfVxyXG4gIFxyXG4gIC5sb2NhdGlvbi1jb250ZW50e1xyXG4gICAgY29sb3I6Izk0OTQ5NDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBwYWRkaW5nLXRvcDogNXB4O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDVweDtcclxuICB9XHJcbiAgXHJcbiBcclxuICBcclxuICAuZmFiLWlubmVye1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIGZvbnQtc2l6ZTogMnJlbTtcclxuICB9XHJcbiAgXHJcbiAgLmlvbmNoaXB7XHJcbiAgICBsZWZ0OiAtNGVtO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmYzQwOTtcclxuICB9XHJcbiAgLmJvdHRvbXtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICBcclxuICB9XHJcblxyXG5cclxuICAubGFiZWwtY29sb3J7XHJcbiAgICBjb2xvcjojNmE2NGZmO1xyXG4gIH1cclxuICBcclxuICAuYWxlcnRzdHlsZXtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbWFyZ2luLXRvcDogMXJlbTtcclxuICAgIHBhZGRpbmctdG9wOiAycHg7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogMnB4O1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG4gIFxyXG4gIH1cclxuICBcclxuICAuc21hbGx7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gIH1cclxuICBcclxuICBcclxuICAuaXRlbXtcclxuICAgIG1hcmdpbjoxMHB4IGF1dG87XHJcbiAgfVxyXG5cclxuICAuYmVsb3ctaGVhZGVyIHtcclxuICAgIG1hcmdpbi1sZWZ0OiAyM3B4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTRweDtcclxuICB9XHJcbiAgIl19 */");
+
+/***/ }),
+
 /***/ "9feF":
 /*!*******************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/tech-support/tech-support.page.html ***!
@@ -65,7 +123,7 @@ const openURL = async (url, ev, direction, animation) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Tech Support</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismissTechSupport()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <object data=\"https://tawk.to/chat/5fdb33bca8a254155ab43057/1epo446f4\"  width=\"100%\" height=\"100%\"></object>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Tech Support</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismissTechSupport()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <iframe (load)=\"myLoadEvent()\" src=\"https://tawk.to/chat/5fdb33bca8a254155ab43057/1epo446f4\" frameborder=\"0\" name=\"techSupport\" id=\"techSupport\" width=\"100%\" height=\"100%\"></iframe>\n  <!-- <object (load)=\"myLoadEvent()\" data=\"https://tawk.to/chat/5fdb33bca8a254155ab43057/1epo446f4\" width=\"100%\" height=\"100%\"></object> -->\n</ion-content>\n");
 
 /***/ }),
 
@@ -173,64 +231,6 @@ const createButtonActiveGesture = (el, isButton) => {
 
 
 
-
-/***/ }),
-
-/***/ "Lo9z":
-/*!*********************************************!*\
-  !*** ./src/app/trip-info/trip-info.page.ts ***!
-  \*********************************************/
-/*! exports provided: TripInfoPage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TripInfoPage", function() { return TripInfoPage; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _raw_loader_trip_info_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./trip-info.page.html */ "gug6");
-/* harmony import */ var _trip_info_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./trip-info.page.scss */ "XHbK");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-
-
-
-
-
-let TripInfoPage = class TripInfoPage {
-    constructor(modalControlTripInfo) {
-        this.modalControlTripInfo = modalControlTripInfo;
-    }
-    ngOnInit() {
-    }
-    dismissTripInfo() {
-        this.modalControlTripInfo.dismiss();
-    }
-};
-TripInfoPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
-];
-TripInfoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-trip-info',
-        template: _raw_loader_trip_info_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        styles: [_trip_info_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
-], TripInfoPage);
-
-
-
-/***/ }),
-
-/***/ "XHbK":
-/*!***********************************************!*\
-  !*** ./src/app/trip-info/trip-info.page.scss ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".text-color {\n  color: #949494;\n  font-weight: 600;\n}\n\n.right {\n  float: right;\n}\n\n.alert-info {\n  margin-bottom: 0;\n}\n\nsummary[role=button] {\n  background-color: #045089;\n  color: #fff;\n  padding: 0.5em;\n  font-weight: bold;\n  cursor: pointer;\n  border-radius: 5px;\n}\n\nsummary[role=button]:hover, summary[role=button]:focus,\nsummary::marker {\n  color: #3dc2ff;\n}\n\ndetails {\n  border: 1px solid #045089;\n  margin-bottom: 0.55em;\n  border-radius: 5px;\n  background-color: #fff;\n}\n\n.margin {\n  margin-left: 0.5rem;\n  margin-right: 0.5rem;\n}\n\ndetails p {\n  padding: 0 1em;\n}\n\np {\n  color: #949494;\n}\n\n.rounded-corner {\n  padding-top: 3rem;\n  border-top-right-radius: 25px;\n  border-top-left-radius: 25px;\n  background-color: #b3e5f1ea;\n  margin: 0;\n  height: 100vh;\n}\n\n.color {\n  color: #949494;\n  font-weight: 600;\n}\n\na {\n  text-decoration: none;\n}\n\nion-avatar {\n  width: 80px;\n  height: 80px;\n}\n\n.map {\n  float: right;\n  color: #eb445a;\n}\n\n.size {\n  font-size: 3.5rem;\n}\n\n.location-content {\n  color: #949494;\n  font-weight: 600;\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n\n.fab-inner {\n  font-weight: 600;\n  font-size: 2rem;\n}\n\n.ionchip {\n  left: -4em;\n  background-color: #ffc409;\n}\n\n.bottom {\n  position: fixed;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRyaXAtaW5mby5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7QUFDRjs7QUFFQTtFQUNFLFlBQUE7QUFDRjs7QUFFQTtFQUNFLGdCQUFBO0FBQ0Y7O0FBRUE7RUFDRSx5QkFBQTtFQUNBLFdBQUE7RUFDQSxjQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7QUFDRjs7QUFDQTs7RUFDaUIsY0FBQTtBQUdqQjs7QUFGQTtFQUNFLHlCQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0FBS0Y7O0FBSEE7RUFDRSxtQkFBQTtFQUNBLG9CQUFBO0FBTUY7O0FBSkE7RUFBVyxjQUFBO0FBUVg7O0FBTkE7RUFDRSxjQUFBO0FBU0Y7O0FBTkE7RUFDRSxpQkFBQTtFQUNBLDZCQUFBO0VBQ0EsNEJBQUE7RUFDQSwyQkFBQTtFQUNBLFNBQUE7RUFDQSxhQUFBO0FBU0Y7O0FBTkE7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7QUFTRjs7QUFOQTtFQUNFLHFCQUFBO0FBU0Y7O0FBTkE7RUFDRSxXQUFBO0VBQ0EsWUFBQTtBQVNGOztBQU5BO0VBQ0UsWUFBQTtFQUNBLGNBQUE7QUFTRjs7QUFQQTtFQUNFLGlCQUFBO0FBVUY7O0FBUEE7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0FBVUY7O0FBSEE7RUFDRSxnQkFBQTtFQUNBLGVBQUE7QUFNRjs7QUFIQTtFQUNFLFVBQUE7RUFDQSx5QkFBQTtBQU1GOztBQUpBO0VBQ0UsZUFBQTtBQU9GIiwiZmlsZSI6InRyaXAtaW5mby5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dC1jb2xvcntcclxuICBjb2xvcjogIzk0OTQ5NDtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG4ucmlnaHR7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcblxyXG4uYWxlcnQtaW5mb3tcclxuICBtYXJnaW4tYm90dG9tOiAwO1xyXG59XHJcblxyXG5zdW1tYXJ5W3JvbGU9YnV0dG9uXSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjojMDQ1MDg5O1xyXG4gIGNvbG9yOiAjZmZmO1xyXG4gIHBhZGRpbmc6IDAuNWVtO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbn1cclxuc3VtbWFyeVtyb2xlPWJ1dHRvbl06aG92ZXIsIHN1bW1hcnlbcm9sZT1idXR0b25dOmZvY3VzLFxyXG5zdW1tYXJ5OjptYXJrZXIge2NvbG9yOiAgIzNkYzJmZn1cclxuZGV0YWlscyB7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgIzA0NTA4OTtcclxuICBtYXJnaW4tYm90dG9tOiAwLjU1ZW07XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbn1cclxuLm1hcmdpbntcclxuICBtYXJnaW4tbGVmdDogMC41cmVtO1xyXG4gIG1hcmdpbi1yaWdodDogMC41cmVtO1xyXG59XHJcbmRldGFpbHMgcCB7cGFkZGluZzogMCAxZW07fVxyXG5cclxucHtcclxuICBjb2xvcjogIzk0OTQ5NDtcclxufVxyXG5cclxuLnJvdW5kZWQtY29ybmVye1xyXG4gIHBhZGRpbmctdG9wOiAzcmVtO1xyXG4gIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAyNXB4O1xyXG4gIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDI1cHg7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2IzZTVmMWVhO1xyXG4gIG1hcmdpbjowO1xyXG4gIGhlaWdodDogMTAwdmg7XHJcbn1cclxuXHJcbi5jb2xvcntcclxuICBjb2xvcjogIzk0OTQ5NDtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG5he1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxuaW9uLWF2YXRhciB7XHJcbiAgd2lkdGg6IDgwcHg7XHJcbiAgaGVpZ2h0OiA4MHB4O1xyXG59XHJcblxyXG4ubWFwe1xyXG4gIGZsb2F0OiByaWdodDtcclxuICBjb2xvcjogI2ViNDQ1YTtcclxufVxyXG4uc2l6ZXtcclxuICBmb250LXNpemU6IDMuNXJlbTtcclxufVxyXG5cclxuLmxvY2F0aW9uLWNvbnRlbnR7XHJcbiAgY29sb3I6Izk0OTQ5NDtcclxuICBmb250LXdlaWdodDogNjAwO1xyXG4gIHBhZGRpbmctdG9wOiA1cHg7XHJcbiAgcGFkZGluZy1ib3R0b206IDVweDtcclxufVxyXG5cclxuLy8gaW9uLWZhYntcclxuLy8gICB0b3A6IDE2NXB4O1xyXG4vLyB9XHJcblxyXG4uZmFiLWlubmVye1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgZm9udC1zaXplOiAycmVtO1xyXG59XHJcblxyXG4uaW9uY2hpcHtcclxuICBsZWZ0OiAtNGVtO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmM0MDk7XHJcbn1cclxuLmJvdHRvbXtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcblxyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -367,13 +367,16 @@ let TechSupportPage = class TechSupportPage {
             const loading = yield this.loadingController.create({
                 cssClass: 'my-custom-class',
                 message: 'Connecting...',
-                duration: 2000,
+                duration: 4000,
                 backdropDismiss: false
             });
             yield loading.present();
             const { role, data } = yield loading.onDidDismiss();
             // console.log('Loading dismissed!');
         });
+    }
+    myLoadEvent() {
+        console.log('its loaded');
     }
     dismissTechSupport() {
         this.modalCtrlTechSupport.dismiss();
@@ -393,19 +396,6 @@ TechSupportPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], TechSupportPage);
 
 
-
-/***/ }),
-
-/***/ "gug6":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/trip-info/trip-info.page.html ***!
-  \*************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Trip Info</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismissTripInfo()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content >\n<div slot=\"fixed\" style=\"width: 100%;\">\n        <div class=\"alert alert-info\" >\n          <strong style=\"float:left\">\n            <ion-icon name=\"time\"></ion-icon>\n            Pickup at 13:54 </strong>\n            <strong style=\"float:right\">\n              <ion-icon name=\"lock-closed\"></ion-icon>\n              8028\n            </strong>&nbsp;PM\n        </div>\n\n<div  >\n    <ion-list >\n      <ion-item lines=\"none\" >\n        <ion-avatar slot=\"start\">\n          <img src=\"../../assets/ambarish.jpg\" >\n        </ion-avatar>\n        <ion-label class=\"color\" >\n          <p>Driver Name: RAVI</p>\n          <p>Vehicle No: MH NB0</p>\n            <ion-label color=\"primary\" class=\"tele\">\n              <ion-icon name=\"call\"></ion-icon>\n              <a href=\"tel:9304387089\">&emsp;9304387089</a>\n            </ion-label>\n        </ion-label>\n        <div class=\"map\">\n          <ion-icon name=\"navigate-circle\" class=\"size\"></ion-icon>\n          <!-- <br>\n          <small>Tracking</small> -->\n        </div>\n      </ion-item>\n\n    </ion-list>\n  </div>\n\n    <div class=\"rounded-corner\" >\n      <div class=\"margin\">\n      <details>\n        <summary role=\"button\" tabindex=\"0\">\n            Ambarish\n          <div style=\"float: right;\">\n            109447\n          </div>\n        </summary>\n\n        <div class=\"location-content\">\n        <ion-icon name=\"pin\"></ion-icon>\n          Marathalli, Bangalore\n        </div>\n\n      </details>\n      <details>\n        <summary role=\"button\" tabindex=\"0\">\n          Ambarish\n          <div style=\"float: right;\">\n            109447\n          </div>\n        </summary>\n        <div class=\"location-content\">\n          <ion-icon name=\"pin\"></ion-icon>\n            Marathalli, Bangalore\n          </div>\n      </details>\n      <details>\n        <summary role=\"button\" aria-expanded=\"false\" tabindex=\"0\">\n          Ambarish\n          <div style=\"float: right;\">\n            109447\n          </div>\n        </summary>\n        <div class=\"location-content\">\n          <ion-icon name=\"pin\"></ion-icon>\n            Marathalli, Bangalore\n          </div>\n      </details>\n      <details>\n        <summary role=\"button\" tabindex=\"0\">\n          Ambarish\n          <div style=\"float: right;\">\n            109447\n          </div>\n        </summary>\n        <div class=\"location-content\">\n          <ion-icon name=\"pin\"></ion-icon>\n            Marathalli, Bangalore\n          </div>\n      </details>\n    </div>\n  </div>\n\n\n  <ion-fab horizontal=\"end\" vertical=\"bottom\" slot=\"fixed\" class=\"bottom\">\n    <ion-fab-button  color=\"warning\">\n      <ion-icon md=\"caret-up\" ios=\"chevron-up-circle-outline\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-list side=\"top\">\n\n        <ion-chip class=\"ionchip\">\n          <ion-icon class=\"fab-inner\"name=\"checkmark-circle\"></ion-icon>\n          <ion-label>Boarded</ion-label>\n        </ion-chip>\n\n        <ion-chip class=\"ionchip\">\n          <ion-icon class=\"fab-inner\" name=\"close-circle\"></ion-icon>\n          <ion-label>NoShow</ion-label>\n        </ion-chip>\n\n        <ion-chip class=\"ionchip\">\n          <ion-icon class=\"fab-inner\" name=\"checkmark-done-circle\"></ion-icon>\n          <ion-label>Alighted</ion-label>\n        </ion-chip>\n\n        <ion-chip class=\"ionchip\">\n          <ion-icon class=\"fab-inner\" name=\"help-circle\"></ion-icon>\n          <ion-label>Waiting</ion-label>\n        </ion-chip>\n\n    </ion-fab-list>\n  </ion-fab>\n\n</div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -667,6 +657,19 @@ const hapticImpact = (options) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (".my-custom-class {\n  --background: #222;\n  --spinner-color: #fff;\n  color: #fff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXHRlY2gtc3VwcG9ydC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUNBLHFCQUFBO0VBRUEsV0FBQTtBQUFGIiwiZmlsZSI6InRlY2gtc3VwcG9ydC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXktY3VzdG9tLWNsYXNzIHtcclxuICAtLWJhY2tncm91bmQ6ICMyMjI7XHJcbiAgLS1zcGlubmVyLWNvbG9yOiAjZmZmO1xyXG5cclxuICBjb2xvcjogI2ZmZjtcclxufVxyXG4iXX0= */");
+
+/***/ }),
+
+/***/ "ylr2":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/schedule-info/schedule-info.page.html ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-title>Roaster Info</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)='dismissTripInfo()'>Close</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content >\r\n<div slot=\"fixed\" style=\"width: 100%;\">\r\n    \r\n\r\n<div  >\r\n    <ion-list >\r\n      <ion-item lines=\"none\" >\r\n      \r\n        <ion-label class=\"color\" >\r\n          <h1>10 May</h1>\r\n   \r\n           \r\n        </ion-label>\r\n   \r\n        <div class=\"map\">\r\n          <ion-button color=\"success\" >Save</ion-button>\r\n          \r\n        \r\n        </div>\r\n      </ion-item>\r\n\r\n      \r\n\r\n    </ion-list>\r\n  </div>\r\n\r\n    <div class=\"rounded-corner\" >\r\n  <div class=\"below-header\">\r\n      <ion-label class=\"label-color\"> NA - NA SLK Soft Campus SEZ - Unit 1</ion-label>\r\n    </div>\r\n      <div class=\"margin\">\r\n        <ion-list lines=\"none\">\r\n  \r\n        <ion-item >\r\n          \r\n          <ion-label class=\"label-color\" >Drop Location</ion-label>\r\n          <ion-select class=\"custom-options\">\r\n            <ion-select-option value=\"SLK Soft Campus SEZ-Unit 1\">SLK Soft Campus SEZ-Unit 1</ion-select-option>\r\n            <ion-select-option value=\"SLK Soft Campus SEZ-Unit 2\">SLK Soft Campus SEZ-Unit 2</ion-select-option>\r\n          </ion-select>\r\n        </ion-item>\r\n\r\n        <ion-item>\r\n          <ion-label class=\"label-color\">Login Time</ion-label>\r\n          <ion-select class=\"custom-options\">\r\n            <ion-select-option value=\"8:00 , 10 May\">8:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"9:00 , 10 May\">9:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"10:00 , 10 May\">10:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"11:00 , 10 May\">11:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"12:00 , 10 May\">12:00 , 10 May</ion-select-option>\r\n          </ion-select>\r\n        </ion-item>\r\n\r\n        <ion-item>\r\n          <ion-label class=\"label-color\">Logout Time</ion-label>\r\n          <ion-select class=\"custom-options\">\r\n            <ion-select-option value=\"8:00 , 10 May\">8:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"9:00 , 10 May\">9:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"10:00 , 10 May\">10:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"11:00 , 10 May\">11:00 , 10 May</ion-select-option>\r\n            <ion-select-option value=\"12:00 , 10 May\">12:00 , 10 May</ion-select-option>\r\n          </ion-select>\r\n        </ion-item>\r\n\r\n        <ion-item >\r\n          <ion-label class=\"label-color\">Remarks</ion-label>\r\n          <ion-select class=\"custom-options\">\r\n            <ion-select-option value=\"Business Need\">Business Need</ion-select-option>\r\n            <ion-select-option value=\"Personal Need\">Personal Need</ion-select-option>\r\n            <ion-select-option value=\"Emergency\">Emergency</ion-select-option>\r\n            <ion-select-option value=\"Others\">Others</ion-select-option>\r\n          </ion-select>\r\n        </ion-item>\r\n        </ion-list>\r\n\r\n      \r\n    </div>\r\n  </div>\r\n\r\n\r\n \r\n\r\n</div>\r\n</ion-content>\r\n");
 
 /***/ })
 

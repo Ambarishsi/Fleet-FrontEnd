@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'schedule-info',
     loadChildren: () => import('./schedule-info/schedule-info.module').then( m => m.ScheduleInfoPageModule)
+  },
+  {
+    path: 'live-tracking',
+    loadChildren: () => import('./live-tracking/live-tracking.module').then( m => m.LiveTrackingPageModule)
   }
 
 
