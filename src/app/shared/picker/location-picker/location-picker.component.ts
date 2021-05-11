@@ -66,7 +66,8 @@ export class LocationPickerComponent implements OnInit {
         cssClass: 'cancel',
         role: 'cancel'
       }
-    ]
+    ],
+    backdropDismiss: false
   })
   .then(actionSheetEl =>{
     actionSheetEl.present();
@@ -116,7 +117,8 @@ export class LocationPickerComponent implements OnInit {
               }
             }
         }
-      ]
+      ],
+      backdropDismiss: false
     });
 
     await alert.present();
