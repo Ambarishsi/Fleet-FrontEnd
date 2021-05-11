@@ -124,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Live Tracking</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismissLiveTrackingModal()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-title>Live Tracking</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)='dismissLiveTrackingModal()'>Close</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <!-- <app-location-picker></app-location-picker> -->\r\n</ion-content>\r\n");
 
 /***/ }),
 

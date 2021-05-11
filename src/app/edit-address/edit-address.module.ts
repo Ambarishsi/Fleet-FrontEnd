@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { IonicModule } from '@ionic/angular';
 
 import { EditAddressPageRoutingModule } from './edit-address-routing.module';
 
 import { EditAddressPage } from './edit-address.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { EditAddressPage } from './edit-address.page';
     FormsModule,
     IonicModule,
     EditAddressPageRoutingModule,
-    Geolocation
+    SharedModule,
   ],
   declarations: [EditAddressPage]
 })

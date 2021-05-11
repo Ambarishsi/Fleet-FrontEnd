@@ -146,7 +146,9 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     authUrl: 'http://ec2-13-127-132-99.ap-south-1.compute.amazonaws.com:7080/v1/api/auth/login',
-    employeeURL: 'http://ec2-13-127-132-99.ap-south-1.compute.amazonaws.com:7080/employee-ws/v1/employee'
+    employeeURL: 'http://ec2-13-127-132-99.ap-south-1.compute.amazonaws.com:7080/employee-ws/v1/employee',
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    YOUR_API_KEY: 'AIzaSyCRq2CiLMKnhjafbok_w1RYyk8LO_3Qsug'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -441,38 +443,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_address_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit-address.page.scss */ "YIsq");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "Bfh1");
-
 
 
 
 
 
 let EditAddressPage = class EditAddressPage {
-    constructor(modalCtrlEditAddress, geolocation) {
+    constructor(modalCtrlEditAddress) {
         this.modalCtrlEditAddress = modalCtrlEditAddress;
-        this.geolocation = geolocation;
     }
     ngOnInit() {
-    }
-    getLatLong() {
-        this.geolocation.getCurrentPosition({
-            timeout: 10000,
-            enableHighAccuracy: true
-        }).then((res) => {
-            this.lat = res.coords.latitude;
-            this.long = res.coords.longitude;
-        }).catch((e) => {
-            console.log(e);
-        });
     }
     dismiss() {
         this.modalCtrlEditAddress.dismiss();
     }
 };
 EditAddressPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
-    { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_5__["Geolocation"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] }
 ];
 EditAddressPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -574,7 +561,7 @@ LoginPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Edit Address</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <p>Lat: {{lat}}, Lng: {{long}}</p>\n  <ion-button (click)=\"getLatLong()\">Get Lat Long</ion-button>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Edit Address</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismiss()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <app-location-picker></app-location-picker>\n</ion-content>\n");
 
 /***/ }),
 
@@ -974,7 +961,7 @@ const routes = [
     },
     {
         path: 'edit-address',
-        loadChildren: () => __webpack_require__.e(/*! import() | edit-address-edit-address-module */ "edit-address-edit-address-module").then(__webpack_require__.bind(null, /*! ./edit-address/edit-address.module */ "vvDS")).then(m => m.EditAddressPageModule)
+        loadChildren: () => Promise.all(/*! import() | edit-address-edit-address-module */[__webpack_require__.e("default~edit-address-edit-address-module~live-tracking-live-tracking-module"), __webpack_require__.e("edit-address-edit-address-module")]).then(__webpack_require__.bind(null, /*! ./edit-address/edit-address.module */ "vvDS")).then(m => m.EditAddressPageModule)
     },
     {
         path: 'admin-helpdesk',
@@ -998,7 +985,7 @@ const routes = [
     },
     {
         path: 'live-tracking',
-        loadChildren: () => __webpack_require__.e(/*! import() | live-tracking-live-tracking-module */ "live-tracking-live-tracking-module").then(__webpack_require__.bind(null, /*! ./live-tracking/live-tracking.module */ "9UlA")).then(m => m.LiveTrackingPageModule)
+        loadChildren: () => Promise.all(/*! import() | live-tracking-live-tracking-module */[__webpack_require__.e("default~edit-address-edit-address-module~live-tracking-live-tracking-module"), __webpack_require__.e("live-tracking-live-tracking-module")]).then(__webpack_require__.bind(null, /*! ./live-tracking/live-tracking.module */ "9UlA")).then(m => m.LiveTrackingPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {

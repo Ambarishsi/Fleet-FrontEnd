@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LiveTrackingPageRoutingModule } from './live-tracking-routing.module';
 
 import { LiveTrackingPage } from './live-tracking.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LiveTrackingPageRoutingModule
+    LiveTrackingPageRoutingModule,
+    SharedModule
   ],
   declarations: [LiveTrackingPage]
 })
