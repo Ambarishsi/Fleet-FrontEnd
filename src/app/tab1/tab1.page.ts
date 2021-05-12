@@ -22,18 +22,30 @@ export class Tab1Page implements OnInit {
   darkmodeFlag = false;
   darkmodeFlagAuto = false;
   userInfo;
+  autoDarkModeEnabled = false;
 
 
   constructor(public modalCtrl: ModalController,
     private routerOutlet: IonRouterOutlet,
-    private passdataprofileService: PassdataprofileService) {}
+    private passdataprofileService: PassdataprofileService) {
+
+    }
 
   ngOnInit() {
-  this.passdataprofileService.on<any>().subscribe(
-    data => {
-      this.userInfo = data.data;
-    }
-  );
+    this.passdataprofileService.on<any>().subscribe(
+      data => {
+        this.userInfo = data.data;
+      }
+    );
+
+  if(this.userInfo.isAutoDarkMode){
+    this.autoDarkModeEnabled = true;
+    this.darkmodeFlagAuto = true;
+  }else{
+    this.autoDarkModeEnabled = false;
+    this.darkmodeFlagAuto = false;
+  }
+
   }
 
 

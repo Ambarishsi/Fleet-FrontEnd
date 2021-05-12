@@ -84,6 +84,7 @@
       <ion-icon name="moon"></ion-icon>
       Auto
     </ion-label>
-    <ion-toggle slot="end" name="darkMode" [disabled]="darkmodeFlag" (click)="toggleDarkModeAutoHandler($event)" color="tertiary"></ion-toggle>
+    <ion-toggle slot="end" *ngIf="autoDarkModeEnabled" name="darkMode" [disabled]="darkmodeFlag" (click)="toggleDarkModeAutoHandler($event)" color="tertiary" checked></ion-toggle>
+    <ion-toggle slot="end" *ngIf="!autoDarkModeEnabled" name="darkMode" [disabled]="darkmodeFlag" (click)="toggleDarkModeAutoHandler($event)" color="tertiary"></ion-toggle>
   </ion-item>
   </ion-footer>
