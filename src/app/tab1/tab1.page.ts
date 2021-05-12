@@ -1,9 +1,8 @@
 /* eslint-disable radix */
 import { Component, OnInit } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { ProfilePage } from '../profile/profile.page';
 import { IonRouterOutlet } from '@ionic/angular';
-import { EmployeeService } from '../../services/profile/employee.service';
 import { PassdataprofileService } from '../../services/profile/passdataprofile.service';
 import { AdminHelpdeskPage } from '../admin-helpdesk/admin-helpdesk.page';
 import { TechSupportPage } from '../tech-support/tech-support.page';
@@ -16,10 +15,6 @@ import { TechSupportPage } from '../tech-support/tech-support.page';
 })
 export class Tab1Page implements OnInit {
 
-  employeeName: string;
-  employeeId: string;
-  employeeData: any;
-  userId = '609100323a6c2c2ec62e6577';
   currTime: string;
   hours;
   minutes;
@@ -31,9 +26,7 @@ export class Tab1Page implements OnInit {
 
   constructor(public modalCtrl: ModalController,
     private routerOutlet: IonRouterOutlet,
-    private employeeService: EmployeeService,
-    private passdataprofileService: PassdataprofileService,
-    public toastController: ToastController) {}
+    private passdataprofileService: PassdataprofileService) {}
 
   ngOnInit() {
   this.passdataprofileService.on<any>().subscribe(
@@ -77,30 +70,6 @@ export class Tab1Page implements OnInit {
       });
 
       return await modalTechSupport.present();
-    }
-
-    //message toast
-    async presentToast(errCode: string) {
-      const toast = await this.toastController.create({
-        message: errCode,
-        position: 'bottom',
-        duration: 2000,
-        animated: true,
-        translucent: true,
-        color: 'tertiary',
-        buttons: [
-           {
-            text: 'X',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
-          }
-        ]
-      });
-      await toast.present();
-
-      const { role } = await toast.onDidDismiss();
     }
 
   //darkmode
