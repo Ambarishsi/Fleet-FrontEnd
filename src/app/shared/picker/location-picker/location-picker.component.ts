@@ -77,7 +77,7 @@ export class LocationPickerComponent implements OnInit {
 
   private getAutoLatLong() {
     this.geolocation.getCurrentPosition({
-      timeout: 10000,
+      timeout: 4000,
       enableHighAccuracy: true
     })
     .then((res) => {

@@ -30,10 +30,11 @@
   </ion-card-content>
 </ion-card>
 
-<ion-button *ngIf="selectedLocationAddress" expand="block">
+
+<ion-button *ngIf="selectedLocationAddress||showLatLong" expand="block" size="small" class="update-address">
   <ion-icon name="save" slot="start"></ion-icon>
   <ion-label>
-    Change Address
+    Update Address
   </ion-label>
 </ion-button>
 
