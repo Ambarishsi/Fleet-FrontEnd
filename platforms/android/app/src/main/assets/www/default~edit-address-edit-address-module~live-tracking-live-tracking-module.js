@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".alert-wrapper {\n  background: #e5e5e5;\n}\n\n.edit-address {\n  float: right;\n  cursor: pointer;\n}\n\n.alertstyle {\n  width: 100%;\n  margin-top: 1rem;\n  padding-top: 2px;\n  padding-bottom: 2px;\n  font-size: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9jYXRpb24tcGlja2VyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQUE7QUFDRjs7QUFFQTtFQUNFLFlBQUE7RUFDQSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQUNGIiwiZmlsZSI6ImxvY2F0aW9uLXBpY2tlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbGVydC13cmFwcGVyIHtcclxuICBiYWNrZ3JvdW5kOiAjZTVlNWU1O1xyXG59XHJcblxyXG4uZWRpdC1hZGRyZXNze1xyXG4gIGZsb2F0OiByaWdodDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5hbGVydHN0eWxle1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1hcmdpbi10b3A6IDFyZW07XHJcbiAgcGFkZGluZy10b3A6IDJweDtcclxuICBwYWRkaW5nLWJvdHRvbTogMnB4O1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuXHJcblxyXG5cclxuXHJcblxyXG5cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".alert-wrapper {\n  background: #e5e5e5;\n}\n\n.edit-address {\n  float: right;\n  cursor: pointer;\n}\n\n.alertstyle {\n  width: 100%;\n  margin-top: 1rem;\n  padding-top: 2px;\n  padding-bottom: 2px;\n  font-size: 15px;\n}\n\n.update-address {\n  margin: 0 0.55rem 0 0.55rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFwuLlxcbG9jYXRpb24tcGlja2VyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQUE7QUFDRjs7QUFFQTtFQUNFLFlBQUE7RUFDQSxlQUFBO0FBQ0Y7O0FBRUE7RUFDRSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtBQUNGOztBQUVBO0VBQ0UsMkJBQUE7QUFDRiIsImZpbGUiOiJsb2NhdGlvbi1waWNrZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWxlcnQtd3JhcHBlciB7XHJcbiAgYmFja2dyb3VuZDogI2U1ZTVlNTtcclxufVxyXG5cclxuLmVkaXQtYWRkcmVzc3tcclxuICBmbG9hdDogcmlnaHQ7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uYWxlcnRzdHlsZXtcclxuICB3aWR0aDogMTAwJTtcclxuICBtYXJnaW4tdG9wOiAxcmVtO1xyXG4gIHBhZGRpbmctdG9wOiAycHg7XHJcbiAgcGFkZGluZy1ib3R0b206IDJweDtcclxuICBmb250LXNpemU6IDE1cHg7XHJcbn1cclxuXHJcbi51cGRhdGUtYWRkcmVzc3tcclxuICBtYXJnaW46IDAgMC41NXJlbSAwIDAuNTVyZW07XHJcbn1cclxuXHJcblxyXG5cclxuXHJcblxyXG5cclxuIl19 */");
 
 /***/ }),
 
@@ -200,7 +200,8 @@ let LocationPickerComponent = class LocationPickerComponent {
                     cssClass: 'cancel',
                     role: 'cancel'
                 }
-            ]
+            ],
+            backdropDismiss: false
         })
             .then(actionSheetEl => {
             actionSheetEl.present();
@@ -208,7 +209,7 @@ let LocationPickerComponent = class LocationPickerComponent {
     }
     getAutoLatLong() {
         this.geolocation.getCurrentPosition({
-            timeout: 10000,
+            timeout: 4000,
             enableHighAccuracy: true
         })
             .then((res) => {
@@ -240,7 +241,8 @@ let LocationPickerComponent = class LocationPickerComponent {
                             }
                         }
                     }
-                ]
+                ],
+                backdropDismiss: false
             });
             yield alert.present();
             const { role } = yield alert.onDidDismiss();
@@ -309,7 +311,7 @@ LocationPickerComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-list>\n  <ion-item lines=\"none\">\n    <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n      <strong><small class=\"small\">Current Pickup Address: </small></strong><br>\n        {{userAddress.pickUpAddress}}\n        <ion-icon (click)=\"onPickLocation()\" class=\"edit-address\" name=\"pencil\"></ion-icon>\n    </div>\n  </ion-item>\n</ion-list>\n\n<ion-card color=\"tertiary\" *ngIf=\"selectedLocationAddress\">\n  <ion-card-header>\n    <ion-card-subtitle>You picked Address: </ion-card-subtitle>\n  </ion-card-header>\n\n  <ion-card-content>\n    {{ selectedLocationAddress }}\n  </ion-card-content>\n</ion-card>\n\n<ion-card color=\"warning\" *ngIf=\"showLatLong\">\n  <ion-card-header>\n    <ion-card-subtitle>Lat Long: </ion-card-subtitle>\n  </ion-card-header>\n\n  <ion-card-content>\n    Latitude: {{ selectedLat }}\n    <br>\n    Longitude: {{ selectedLong }}\n  </ion-card-content>\n</ion-card>\n\n<ion-button *ngIf=\"selectedLocationAddress\" expand=\"block\">\n  <ion-icon name=\"save\" slot=\"start\"></ion-icon>\n  <ion-label>\n    Change Address\n  </ion-label>\n</ion-button>\n\n\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-list>\n  <ion-item lines=\"none\">\n    <div class=\"alert alert-primary alertstyle\" role=\"alert\">\n      <strong><small class=\"small\">Current Pickup Address: </small></strong><br>\n        {{userAddress.pickUpAddress}}\n        <ion-icon (click)=\"onPickLocation()\" class=\"edit-address\" name=\"pencil\"></ion-icon>\n    </div>\n  </ion-item>\n</ion-list>\n\n<ion-card color=\"tertiary\" *ngIf=\"selectedLocationAddress\">\n  <ion-card-header>\n    <ion-card-subtitle>You picked Address: </ion-card-subtitle>\n  </ion-card-header>\n\n  <ion-card-content>\n    {{ selectedLocationAddress }}\n  </ion-card-content>\n</ion-card>\n\n<ion-card color=\"warning\" *ngIf=\"showLatLong\">\n  <ion-card-header>\n    <ion-card-subtitle>Lat Long: </ion-card-subtitle>\n  </ion-card-header>\n\n  <ion-card-content>\n    Latitude: {{ selectedLat }}\n    <br>\n    Longitude: {{ selectedLong }}\n  </ion-card-content>\n</ion-card>\n\n\n<ion-button *ngIf=\"selectedLocationAddress||showLatLong\" expand=\"block\" size=\"small\" class=\"update-address\">\n  <ion-icon name=\"save\" slot=\"start\"></ion-icon>\n  <ion-label>\n    Update Address\n  </ion-label>\n</ion-button>\n\n\n\n\n");
 
 /***/ }),
 
