@@ -9,6 +9,7 @@ import { LiveTrackingPageRoutingModule } from './live-tracking-routing.module';
 import { LiveTrackingPage } from './live-tracking.page';
 import { SharedModule } from '../shared/shared.module';
 
+
 @NgModule({
   imports: [
     CommonModule,

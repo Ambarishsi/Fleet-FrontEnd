@@ -26,6 +26,7 @@ export class Tab1Page implements OnInit {
   strTime;
   darkmodeFlag = false;
   darkmodeFlagAuto = false;
+  userInfo;
 
 
   constructor(public modalCtrl: ModalController,
@@ -35,12 +36,13 @@ export class Tab1Page implements OnInit {
     public toastController: ToastController) {}
 
   ngOnInit() {
-   this.userInfo();
+  this.passdataprofileService.on<any>().subscribe(
+    data => {
+      this.userInfo = data.data;
+    }
+  );
   }
 
-  sendEmployeeData(): void {
-    this.passdataprofileService.emit<any>(this.employeeData);
-}
 
   //showModalProfile ProfilePage
   async showModalProfile() {
@@ -100,23 +102,6 @@ export class Tab1Page implements OnInit {
 
       const { role } = await toast.onDidDismiss();
     }
-
-  userInfo(){
-    this.employeeService.findById(this.userId).subscribe(resp => {
-      // console.log('Ambarish', resp);
-      if(resp.status === 200){
-        this.employeeData = resp;
-        this.employeeName = this.employeeData.data.firstName +' '+ this.employeeData.data.middleName +' '+ this.employeeData.data.lastName;
-        this.employeeId = this.employeeData.data.employeeId;
-        this.sendEmployeeData();
-      }else{
-        this.presentToast('error occured while getting userinfo from employee service');
-      }
-    }, err => {
-      console.log(err);
-    });
-  }
-
 
   //darkmode
 

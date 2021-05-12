@@ -16,14 +16,14 @@
 
   <ion-card>
     <ion-item>
-      <ion-icon name="person" slot="end"></ion-icon>
+      <ion-icon name="person" slot="end" color="medium"></ion-icon>
       <ion-chip  color="primary">
-        <ion-label class="label-color">{{employeeName}}</ion-label>
+        <ion-label class="label-color">{{ userInfo.firstName }} {{userInfo.middleName}} {{userInfo.lastName}}</ion-label>
       </ion-chip>
     </ion-item>
 
     <ion-card-content>
-      Employee ID: {{employeeId}}
+      Employee ID: {{userInfo.employeeId}}
     </ion-card-content>
   </ion-card>
 
