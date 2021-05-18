@@ -311,6 +311,10 @@ body.dark {
   --ion-tab-bar-background: #1f1f1f;
   --ion-card-background: #1e1e1e;
 }
+.my-custom-action-sheet {
+  --color: #045089;
+  --button-color: red;
+}
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------

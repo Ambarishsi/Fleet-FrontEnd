@@ -16,14 +16,14 @@
 
   <ion-card>
     <ion-item>
-      <ion-icon name="person" slot="end"></ion-icon>
+      <ion-icon name="person" slot="end" color="medium"></ion-icon>
       <ion-chip  color="primary">
-        <ion-label class="label-color">{{employeeName}}</ion-label>
+        <ion-label class="label-color">{{ userInfo.firstName }} {{userInfo.middleName}} {{userInfo.lastName}}</ion-label>
       </ion-chip>
     </ion-item>
 
     <ion-card-content>
-      Employee ID: {{employeeId}}
+      Employee ID: {{userInfo.employeeId}}
     </ion-card-content>
   </ion-card>
 
@@ -84,6 +84,7 @@
       <ion-icon name="moon"></ion-icon>
       Auto
     </ion-label>
-    <ion-toggle slot="end" name="darkMode" [disabled]="darkmodeFlag" (click)="toggleDarkModeAutoHandler($event)" color="tertiary"></ion-toggle>
+    <ion-toggle slot="end" *ngIf="autoDarkModeEnabled" name="darkMode" [disabled]="darkmodeFlag" (click)="toggleDarkModeAutoHandler($event)" color="tertiary" checked></ion-toggle>
+    <ion-toggle slot="end" *ngIf="!autoDarkModeEnabled" name="darkMode" [disabled]="darkmodeFlag" (click)="toggleDarkModeAutoHandler($event)" color="tertiary"></ion-toggle>
   </ion-item>
   </ion-footer>

@@ -1,9 +1,8 @@
 /* eslint-disable radix */
 import { Component, OnInit } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { ProfilePage } from '../profile/profile.page';
 import { IonRouterOutlet } from '@ionic/angular';
-import { EmployeeService } from '../../services/profile/employee.service';
 import { PassdataprofileService } from '../../services/profile/passdataprofile.service';
 import { AdminHelpdeskPage } from '../admin-helpdesk/admin-helpdesk.page';
 import { TechSupportPage } from '../tech-support/tech-support.page';
@@ -16,31 +15,39 @@ import { TechSupportPage } from '../tech-support/tech-support.page';
 })
 export class Tab1Page implements OnInit {
 
-  employeeName: string;
-  employeeId: string;
-  employeeData: any;
-  userId = '609100323a6c2c2ec62e6577';
   currTime: string;
   hours;
   minutes;
   strTime;
   darkmodeFlag = false;
   darkmodeFlagAuto = false;
+  userInfo;
+  autoDarkModeEnabled = false;
 
 
   constructor(public modalCtrl: ModalController,
     private routerOutlet: IonRouterOutlet,
-    private employeeService: EmployeeService,
-    private passdataprofileService: PassdataprofileService,
-    public toastController: ToastController) {}
+    private passdataprofileService: PassdataprofileService) {
+
+    }
 
   ngOnInit() {
-   this.userInfo();
+    this.passdataprofileService.on<any>().subscribe(
+      data => {
+        this.userInfo = data.data;
+      }
+    );
+
+  if(this.userInfo.isAutoDarkMode){
+    this.autoDarkModeEnabled = true;
+    this.darkmodeFlagAuto = true;
+  }else{
+    this.autoDarkModeEnabled = false;
+    this.darkmodeFlagAuto = false;
   }
 
-  sendEmployeeData(): void {
-    this.passdataprofileService.emit<any>(this.employeeData);
-}
+  }
+
 
   //showModalProfile ProfilePage
   async showModalProfile() {
@@ -76,47 +83,6 @@ export class Tab1Page implements OnInit {
 
       return await modalTechSupport.present();
     }
-
-    //message toast
-    async presentToast(errCode: string) {
-      const toast = await this.toastController.create({
-        message: errCode,
-        position: 'bottom',
-        duration: 2000,
-        animated: true,
-        translucent: true,
-        color: 'tertiary',
-        buttons: [
-           {
-            text: 'X',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
-          }
-        ]
-      });
-      await toast.present();
-
-      const { role } = await toast.onDidDismiss();
-    }
-
-  userInfo(){
-    this.employeeService.findById(this.userId).subscribe(resp => {
-      // console.log('Ambarish', resp);
-      if(resp.status === 200){
-        this.employeeData = resp;
-        this.employeeName = this.employeeData.data.firstName +' '+ this.employeeData.data.middleName +' '+ this.employeeData.data.lastName;
-        this.employeeId = this.employeeData.data.employeeId;
-        this.sendEmployeeData();
-      }else{
-        this.presentToast('error occured while getting userinfo from employee service');
-      }
-    }, err => {
-      console.log(err);
-    });
-  }
-
 
   //darkmode
 

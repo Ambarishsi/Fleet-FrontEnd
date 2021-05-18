@@ -17,6 +17,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _live_tracking_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./live-tracking-routing.module */ "zTj4");
 /* harmony import */ var _live_tracking_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./live-tracking.page */ "NpRI");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/shared.module */ "PCNd");
+
 
 
 
@@ -32,7 +34,8 @@ LiveTrackingPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-            _live_tracking_routing_module__WEBPACK_IMPORTED_MODULE_5__["LiveTrackingPageRoutingModule"]
+            _live_tracking_routing_module__WEBPACK_IMPORTED_MODULE_5__["LiveTrackingPageRoutingModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"]
         ],
         declarations: [_live_tracking_page__WEBPACK_IMPORTED_MODULE_6__["LiveTrackingPage"]]
     })
@@ -96,7 +99,7 @@ LiveTrackingPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\n  <ion-toolbar>\n    <ion-title>Live Tracking</ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)='dismissLiveTrackingModal()'>Close</ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-title>Live Tracking</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)='dismissLiveTrackingModal()'>Close</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <!-- <app-location-picker></app-location-picker> -->\r\n</ion-content>\r\n");
 
 /***/ }),
 

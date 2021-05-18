@@ -1,0 +1,43 @@
+<ion-list>
+  <ion-item lines="none">
+    <div class="alert alert-primary alertstyle" role="alert">
+      <strong><small class="small">Current Pickup Address: </small></strong><br>
+        {{userAddress.pickUpAddress}}
+        <ion-icon (click)="onPickLocation()" class="edit-address" name="pencil"></ion-icon>
+    </div>
+  </ion-item>
+</ion-list>
+
+<ion-card color="tertiary" *ngIf="selectedLocationAddress">
+  <ion-card-header>
+    <ion-card-subtitle>You picked Address: </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ selectedLocationAddress }}
+  </ion-card-content>
+</ion-card>
+
+<ion-card color="warning" *ngIf="showLatLong">
+  <ion-card-header>
+    <ion-card-subtitle>Lat Long: </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Latitude: {{ selectedLat }}
+    <br>
+    Longitude: {{ selectedLong }}
+  </ion-card-content>
+</ion-card>
+
+
+<ion-button *ngIf="selectedLocationAddress||showLatLong" expand="block" size="small" class="update-address">
+  <ion-icon name="save" slot="start"></ion-icon>
+  <ion-label>
+    Update Address
+  </ion-label>
+</ion-button>
+
+
+
+
